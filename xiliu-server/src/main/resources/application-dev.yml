@@ -103,8 +103,8 @@ xl:
 # 腾讯云cos配置
 cos:
   baseUrl: https://xiliu-125966.cos.ap-guangzhou.myqcloud.com
-    secretId: AKIDdHsLgtxoSs3sWw73lz
-    secretKey: zZxBD0b4QcZGmdFcotm
-    regionName: ap-guangzhou
-    bucketName: xiliu-125966
-    folderPrefix: /upload
+  secretId: AKIDdHsLgtxoSs3sWw73lz
+  secretKey: zZxBD0b4QcZGmdFcotm
+  regionName: ap-guangzhou
+  bucketName: xiliu-125966
+  folderPrefix: /upload
