@@ -101,7 +101,8 @@ public class GenTableColumn implements Serializable{
     private Long updatedBy;
 
     @ApiModelProperty(value = "数据版本")
-    private Integer version;
+    @Version
+    private Long version;
 
 
     public boolean isSuperColumn() {

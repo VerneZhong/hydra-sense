@@ -1,5 +1,6 @@
 package com.xiliu.generator.mapper;
 
+import com.baomidou.mybatisplus.annotation.InterceptorIgnore;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.xiliu.generator.entity.GenTableColumn;
 
@@ -20,6 +21,7 @@ public interface GenTableColumnMapper extends BaseMapper<GenTableColumn> {
      * @param tableName 表名称
      * @return 列信息
      */
+    @InterceptorIgnore(tenantLine = "1")
     List<GenTableColumn> selectDbTableColumnsByName(String tableName);
 
 }

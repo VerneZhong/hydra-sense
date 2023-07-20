@@ -134,7 +134,8 @@ public class GenTable {
     private Long updatedBy;
 
     @ApiModelProperty(value = "数据版本")
-    private Integer version;
+    @Version
+    private Long version;
 
     @TableField(exist = false)
     private String beginTime;

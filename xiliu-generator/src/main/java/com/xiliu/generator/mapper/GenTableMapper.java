@@ -39,6 +39,7 @@ public interface GenTableMapper extends BaseMapper<GenTable> {
      * @param tableNames 表名称组
      * @return 数据库表集合
      */
+    @InterceptorIgnore(tenantLine = "1")
    List<GenTable> selectDbTableListByNames(String[] tableNames);
 
     /**
