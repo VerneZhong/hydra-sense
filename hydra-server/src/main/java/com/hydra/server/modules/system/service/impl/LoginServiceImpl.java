@@ -12,8 +12,6 @@ import com.hydra.server.common.exception.ServiceException;
 import com.hydra.server.common.security.entity.JwtUser;
 import com.hydra.server.manager.AsyncManager;
 import com.hydra.server.manager.factory.AsyncFactory;
-import com.hydra.server.modules.platform.entity.XlTenant;
-import com.hydra.server.modules.platform.service.IXlTenantService;
 import com.hydra.server.modules.system.entity.XlUser;
 import com.hydra.server.modules.system.service.LoginService;
 import com.hydra.server.modules.system.service.XlMenuService;
@@ -56,8 +54,6 @@ public class LoginServiceImpl implements LoginService {
     private XlRoleService roleService;
     @Autowired
     private XlUserService xlUserService;
-    @Autowired
-    private IXlTenantService xlTenantService;
 
     @Override
     public String login(String username, String password) {
@@ -146,17 +142,6 @@ public class LoginServiceImpl implements LoginService {
             AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户已停用，请联系管理员"));
             throw new ServiceException("对不起，您的账号：" + username + " 已停用，请联系管理员");
         }
-        //先查询是否被停用了租户
-        if (userInfo.getTenantStatus() != null && userInfo.getTenantStatus().intValue() == 1) {
-            // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "当前租户已经被停用，请联系管理员"));
-            throw new ServiceException("当前租户已经被停用，请联系管理员");
-        }
-        if (userInfo.getTenantEndDate() != null && userInfo.getTenantEndDate().compareTo(new Date()) < 0) {
-            // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "当前租户已超过租赁日期，请联系管理员"));
-            throw new ServiceException("当前租户已超过租赁日期，请联系管理员");
-        }
         AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_SUCCESS, "登录成功"));
         return userInfo;
     }
@@ -169,16 +154,14 @@ public class LoginServiceImpl implements LoginService {
             Set<String> roles = this.getRolePermission(sysUser);
             // 权限集合
             Set<String> permissions = this.getMenuPermission(sysUser);
-            // 查询租户信息
-            XlTenant tenant = xlTenantService.selectXlTenantByTenantId(sysUser.getTenantId());
             LoginUser sysUserVo = new LoginUser();
             sysUserVo.setUser(sysUser);
             sysUserVo.setRoles(roles);
             sysUserVo.setPermissions(permissions);
-            if(tenant != null) {
-                sysUserVo.setTenantEndDate(tenant.getTenantTime());
-                sysUserVo.setTenantStatus(Integer.valueOf(tenant.getTenantStatus()));
-            }
+//            if(tenant != null) {
+//                sysUserVo.setTenantEndDate(tenant.getTenantTime());
+//                sysUserVo.setTenantStatus(Integer.valueOf(tenant.getTenantStatus()));
+//            }
             return sysUserVo;
         }
         return null;

@@ -1,0 +1,12 @@
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/service/GenTableService.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/mapper/GenTableMapper.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/entity/GenTableColumn.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/utils/GenUtils.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/constant/GenConstants.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/mapper/GenTableColumnMapper.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/service/GenTableServiceImpl.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/entity/GenTable.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/controller/GenController.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/config/GenConfig.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/utils/VelocityUtils.java
+/Users/verne.zhong/IdeaProjects/hydra-sence/hydra-generator/src/main/java/com/hydra/generator/utils/VelocityInitializer.java

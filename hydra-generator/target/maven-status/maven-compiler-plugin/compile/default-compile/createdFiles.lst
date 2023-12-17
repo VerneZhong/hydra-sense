@@ -1,0 +1,12 @@
+com/hydra/generator/controller/GenController.class
+com/hydra/generator/config/GenConfig.class
+com/hydra/generator/utils/VelocityInitializer.class
+com/hydra/generator/utils/GenUtils.class
+com/hydra/generator/entity/GenTableColumn.class
+com/hydra/generator/entity/GenTable.class
+com/hydra/generator/mapper/GenTableColumnMapper.class
+com/hydra/generator/service/GenTableService.class
+com/hydra/generator/service/GenTableServiceImpl.class
+com/hydra/generator/mapper/GenTableMapper.class
+com/hydra/generator/utils/VelocityUtils.class
+com/hydra/generator/constant/GenConstants.class

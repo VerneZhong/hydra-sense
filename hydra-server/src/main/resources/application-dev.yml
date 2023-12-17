@@ -74,12 +74,7 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-  # 逻辑删除
-    db-config:
-      logic-delete-field: deleted  # 全局逻辑删除的实体字段名
-      logic-delete-value: 1
-      logic-not-delete-value: 0
+
   # xml文件路径，classpath* 代表所有模块的resources目录 classpath 不加星号代表当前模块下的resources目录
   mapper-locations: classpath*:mapper/**/*.xml
 

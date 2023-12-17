@@ -28,12 +28,6 @@ CREATE TABLE `gen_table` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='代码生成业务表';
 
 -- ----------------------------
--- Records of gen_table
--- ----------------------------
-INSERT INTO `gen_table` VALUES ('1', 'hydra_tenant', '租户表', null, null, 'XlTenant', 'crud', 'com.hydra.modules.system', 'system', 'tenant', '租户表', 'hydra', '0', '/', null, null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table` VALUES ('2', 'hydra_tenant_package', '租户套餐表', null, null, 'XlTenantPackage', 'crud', 'com.hydra.modules.system', 'system', 'package', '租户套餐表', 'hydra', '0', '/', null, null, null, '2023-03-03 16:28:41', '1', '0', '1');
-
--- ----------------------------
 -- Table structure for gen_table_column
 -- ----------------------------
 DROP TABLE IF EXISTS `gen_table_column`;
@@ -66,43 +60,6 @@ CREATE TABLE `gen_table_column` (
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='代码生成业务表字段';
 
 -- ----------------------------
--- Records of gen_table_column
--- ----------------------------
-INSERT INTO `gen_table_column` VALUES ('1', '1', 'tenant_id', '租户ID', 'bigint', 'Long', 'tenantId', '1', '1', null, '1', null, null, '0', 'EQ', 'input', null, '1', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('2', '1', 'tenant_type', '租户类型;0:公司;1:部门;2:个人;3:其他', 'tinyint unsigned', 'String', 'tenantType', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'select', null, '2', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('3', '1', 'tenant_status', '用户状态;0:正常,1:停用', 'tinyint unsigned', 'String', 'tenantStatus', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'radio', null, '3', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('4', '1', 'tenant_code', '编码', 'varchar(20)', 'String', 'tenantCode', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '4', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('5', '1', 'tenant_name', '名称', 'varchar(64)', 'String', 'tenantName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', null, '5', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('6', '1', 'tenant_logo', 'logo图', 'varchar(128)', 'String', 'tenantLogo', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '6', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('7', '1', 'sort_order', '显示顺序', 'int', 'Long', 'sortOrder', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '7', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('8', '1', 'home_url', '官方地址', 'varchar(64)', 'String', 'homeUrl', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '8', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('9', '1', 'phone', '电话', 'varchar(20)', 'String', 'phone', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '9', null, null, '2023-03-03 16:28:39', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('10', '1', 'fax', '传真', 'varchar(15)', 'String', 'fax', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '10', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('11', '1', 'email', '邮箱', 'varchar(20)', 'String', 'email', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '11', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('12', '1', 'address', '地址', 'varchar(128)', 'String', 'address', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '12', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('13', '1', 'user_name', '管理员账号', 'varchar(20)', 'String', 'userName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', null, '13', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('14', '1', 'user_pwd', '管理员密码', 'varchar(64)', 'String', 'userPwd', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '14', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('15', '1', 'tenant_time', '租赁到期时间', 'datetime', 'Date', 'tenantTime', '0', '0', null, '1', '1', '1', '1', 'EQ', 'datetime', null, '15', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('16', '1', 'remarks', '备注', 'varchar(255)', 'String', 'remarks', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '16', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('17', '1', 'updated_time', '修改时间', 'datetime', 'Date', 'updatedTime', '0', '0', null, '1', '1', '1', '1', 'EQ', 'datetime', null, '17', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('18', '1', 'updated_by', '修改人的id', 'bigint', 'Long', 'updatedBy', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '18', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('19', '1', 'created_time', '创建时间', 'datetime', 'Date', 'createdTime', '0', '0', null, '1', '1', '1', '1', 'EQ', 'datetime', null, '19', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('20', '1', 'created_by', '创建人的id', 'bigint', 'Long', 'createdBy', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '20', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('21', '1', 'deleted', '逻辑删除 1已删除 0未删除', 'tinyint(1)', 'Integer', 'deleted', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', null, '21', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('22', '1', 'version', '数据版本', 'int', 'Long', 'version', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', null, '22', null, null, '2023-03-03 16:28:40', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('23', '2', 'package_id', '套餐id', 'bigint', 'Long', 'packageId', '1', '1', null, '1', null, null, '0', 'EQ', 'input', null, '1', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('24', '2', 'package_name', '名称', 'varchar(64)', 'String', 'packageName', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', null, '2', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('25', '2', 'menu_ids', '关联菜单id', 'varchar(1000)', 'String', 'menuIds', '0', '0', null, '1', '1', '1', '1', 'EQ', 'textarea', null, '3', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('26', '2', 'status', '状态;0:正常,1:停用', 'tinyint unsigned', 'String', 'status', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'radio', null, '4', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('27', '2', 'remarks', '备注', 'varchar(255)', 'String', 'remarks', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '5', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('28', '2', 'updated_time', '修改时间', 'datetime', 'Date', 'updatedTime', '0', '0', null, '1', '1', '1', '1', 'EQ', 'datetime', null, '6', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('29', '2', 'updated_by', '修改人的id', 'bigint', 'Long', 'updatedBy', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '7', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('30', '2', 'created_time', '创建时间', 'datetime', 'Date', 'createdTime', '0', '0', null, '1', '1', '1', '1', 'EQ', 'datetime', null, '8', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('31', '2', 'created_by', '创建人的id', 'bigint', 'Long', 'createdBy', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', null, '9', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('32', '2', 'deleted', '逻辑删除 1已删除 0未删除', 'tinyint(1)', 'Integer', 'deleted', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', null, '10', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-INSERT INTO `gen_table_column` VALUES ('33', '2', 'version', '数据版本', 'int', 'Long', 'version', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', null, '11', null, null, '2023-03-03 16:28:41', '1', '0', '1');
-
--- ----------------------------
 -- Table structure for hydra_dept
 -- ----------------------------
 DROP TABLE IF EXISTS `hydra_dept`;
@@ -130,10 +87,7 @@ CREATE TABLE `hydra_dept` (
 -- ----------------------------
 -- Records of hydra_dept
 -- ----------------------------
-INSERT INTO `hydra_dept` VALUES ('1', '0', '1', '希留科技', null, null, null, null, '0', null, '9999', null, null, null, null, '0', '1');
 INSERT INTO `hydra_dept` VALUES ('2', '1', '1,1', '运营部', '1', null, null, null, '0', '0', '9999', null, null, '2023-03-05 14:33:40', null, '0', '1');
-INSERT INTO `hydra_dept` VALUES ('6', '0', '0', '与之', '0', '与之管理员', '13545678956', null, '0', null, '4', null, null, '2023-03-07 11:33:54', null, '0', '1');
-INSERT INTO `hydra_dept` VALUES ('8', '0', '0', '租户2', '0', '租户2管理员', '13546532356', null, '0', null, '6', null, null, '2023-03-09 15:07:43', null, '0', '1');
 INSERT INTO `hydra_dept` VALUES ('9', '1', '1,1', '研发部', '2', '小王', '13245678956', '2554@163.com', '0', '0', '9999', '2023-03-13 17:21:27', '1', '2023-03-13 17:21:10', null, '1', '0');
 
 -- ----------------------------
@@ -162,7 +116,6 @@ INSERT INTO `hydra_dict` VALUES ('1', 'sys_common_status', '系统状态', '0', 
 INSERT INTO `hydra_dict` VALUES ('2', 'sys_normal_disable', '默认状态', '0', '正常/停用', '2023-03-04 22:55:40', '1', '2023-03-04 22:50:21', '1', '0', '1');
 INSERT INTO `hydra_dict` VALUES ('3', 'sys_show_hide', '显示状态', '0', '显示/隐藏', null, null, '2023-03-05 09:36:34', '1', '0', '1');
 INSERT INTO `hydra_dict` VALUES ('4', 'sys_menu_status', '菜单状态', '0', '1正常/0禁用', null, null, '2023-03-05 10:57:35', '1', '0', '1');
-INSERT INTO `hydra_dict` VALUES ('5', 'sys_tenant_type', '租户类型', '0', '公司/部门/小组/其他', null, null, '2023-03-06 12:03:46', '1', '0', '1');
 
 -- ----------------------------
 -- Table structure for hydra_dict_data
@@ -306,16 +259,6 @@ INSERT INTO `hydra_menu` VALUES ('43', '用户查询', null, '#', 'system:user:q
 INSERT INTO `hydra_menu` VALUES ('44', '用户新增', null, '#', 'system:user:create', null, '2', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:18', null, '0', '1');
 INSERT INTO `hydra_menu` VALUES ('45', '用户修改', null, '#', 'system:user:edit', null, '3', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:38', null, '0', '1');
 INSERT INTO `hydra_menu` VALUES ('46', '用户删除', null, '#', 'system:user:delete', null, '4', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:56', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('47', '租户管理', null, 'tree', 'platform:tenant:list', null, '1', '26', '1', '0', null, 'tenant', 'platform/tenant/index', null, '0', '1', '2023-03-05 13:05:56', null, '2023-03-05 13:05:02', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('48', '套餐管理', null, 'shopping', 'platform:package:list', null, '2', '26', '1', '0', null, 'package', 'platform/tenantpackage/index', null, '0', '1', null, null, '2023-03-05 13:07:36', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('49', '套餐新增', null, '#', 'platform:package:create', null, '1', '48', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:27:58', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('50', '套餐修改', null, '#', 'platform:package:edit', null, '2', '48', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:28:26', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('51', '套餐删除', null, '#', 'platform:package:remove', null, '3', '48', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:28:54', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('52', '套餐查询', null, '#', 'platform:package:query', null, '4', '48', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:29:14', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('53', '租户查询', null, '#', 'platform:tenant:query', null, '1', '47', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:29:52', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('54', '租户新增', null, '#', 'platform:tenant:create', null, '2', '47', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:30:14', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('55', '租户修改', null, '#', 'platform:tenant:edit', null, '3', '47', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:32:37', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('56', '租户删除', null, '#', 'platform:tenant:remove', null, '4', '47', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 15:32:59', null, '0', '1');
 
 DROP TABLE IF EXISTS `hydra_oper_log`;
 CREATE TABLE `hydra_oper_log` (
@@ -350,8 +293,6 @@ CREATE TABLE `hydra_oper_log` (
 -- Records of hydra_oper_log
 -- ----------------------------
 INSERT INTO `hydra_oper_log` VALUES ('1', '角色管理-保存数据权限', '2', 'controller.system.modules.com.hydra.server.XlRoleController.dataScope()', 'POST', '0', 'admin', '/ucenter/role/dataScope', '127.0.0.1', null, '{\"admin\":false,\"createdBy\":1,\"createdTime\":\"2023-03-13 10:57:04\",\"dataScope\":\"3\",\"deleted\":false,\"deptCheckStrictly\":true,\"deptIds\":[],\"description\":\"门店管理员，数据权限只能查看到本门店的所有数据\",\"menuCheckStrictly\":true,\"params\":{},\"roleId\":12,\"roleKey\":\"store\",\"roleName\":\"门店管理员\",\"status\":0,\"tenantId\":9999,\"updatedBy\":1,\"updatedTime\":\"2023-03-13T11:31:39.403+08:00\",\"version\":2}', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 11:31:40', null, null, '9999', null, null, '2023-03-13 11:31:40', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('2', '租户套餐表', '1', 'controller.platform.modules.com.hydra.server.XlTenantPackageController.create()', 'POST', '0', 'admin', '/platform/package/create', '127.0.0.1', null, '{\"createdBy\":1,\"createdTime\":\"2023-03-13T14:21:31.262+08:00\",\"deleted\":false,\"menuIds\":\"1,4,9,10,11,12,5,7,8,13,14,6,15,16,17,18,27,38,39,41,28,29,31,32,33,34,30,35,36,37,40,42,43,44,45,46,20,21,22,19\",\"packageId\":3,\"packageName\":\"默认套餐\",\"params\":{},\"status\":\"0\",\"version\":1}', '{\"code\":200,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 14:21:31', null, null, '9999', null, null, '2023-03-13 14:21:31', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('3', '租户表', '2', 'controller.platform.modules.com.hydra.server.XlTenantController.update()', 'POST', '0', 'admin', '/platform/tenant/update/4', '127.0.0.1', null, '4 {\"address\":\"广东省广州市海珠区\",\"createdBy\":1,\"createdTime\":\"2023-03-07 11:33:54\",\"deleted\":false,\"email\":\"123\",\"fax\":\"020\",\"homeUrl\":\"http://yzcms.hydra.online\",\"packageId\":3,\"params\":{},\"phone\":\"13545678956\",\"remarks\":\"备注\",\"sortOrder\":0,\"tenantCode\":\"1000\",\"tenantId\":4,\"tenantLogo\":\"https://hydra-1259663924.cos.ap-guangzhou.myqcloud.com/upload/house/1678248195183_logo.jpg\",\"tenantName\":\"与之\",\"tenantStatus\":\"0\",\"tenantTime\":\"2024-03-07 08:00:00\",\"tenantType\":\"0\",\"updatedBy\":1,\"updatedTime\":\"2023-03-13T14:31:37.859+08:00\",\"userName\":\"yz_admin\",\"userPwd\":\"123456\",\"version\":2}', '{\"code\":200,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 14:31:38', null, null, '9999', null, null, '2023-03-13 14:31:38', '1', '0', '1');
 INSERT INTO `hydra_oper_log` VALUES ('4', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.selectAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/selectAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 16:14:07', null, null, '9999', null, null, '2023-03-13 16:14:07', '1', '0', '1');
 INSERT INTO `hydra_oper_log` VALUES ('5', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.cancelAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/cancelAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":2,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:11:44', null, null, '9999', null, null, '2023-03-13 17:11:44', '1', '1', '1');
 INSERT INTO `hydra_oper_log` VALUES ('6', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.selectAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/selectAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:12:04', null, null, '9999', null, null, '2023-03-13 17:12:04', '1', '0', '1');
@@ -391,12 +332,7 @@ CREATE TABLE `hydra_role` (
 -- Records of hydra_role
 -- ----------------------------
 INSERT INTO `hydra_role` VALUES ('1', '超级管理员', '拥有系统最高权限', 'admin', '1', '1', '1', '0', '9999', '2023-03-04 18:01:35', '1', '2023-03-03 18:03:28', null, '0', '1');
-INSERT INTO `hydra_role` VALUES ('5', '与之管理员', '租户管理员', 'admin', '1', '1', '1', '0', '4', null, null, '2023-03-07 11:33:54', '1', '0', '1');
-INSERT INTO `hydra_role` VALUES ('7', '租户2管理员', '租户管理员', 'admin', '1', '1', '1', '0', '6', null, null, '2023-03-09 15:07:43', '1', '0', '1');
 INSERT INTO `hydra_role` VALUES ('8', '普通管理员', '普通管理员', 'common', '1', '0', '0', '0', '9999', '2023-03-10 15:28:44', '1', '2023-03-10 11:38:47', '1', '1', '1');
-INSERT INTO `hydra_role` VALUES ('11', '公司管理员', '公司管理员，数据可以查看到本公司的所有数据', 'common', '1', '0', '0', '0', '9999', '2023-03-13 10:43:28', '1', '2023-03-10 15:35:05', '1', '0', '3');
-INSERT INTO `hydra_role` VALUES ('12', '门店管理员', '门店管理员，数据权限只能查看到本门店的所有数据', 'store', '3', '0', '0', '0', '9999', '2023-03-13 17:07:10', '1', '2023-03-13 10:57:04', '1', '1', '2');
-INSERT INTO `hydra_role` VALUES ('13', '门店管理员', '门店管理员，数据权限只能看到本门店下的数据', 'store', '1', '1', '1', '0', '9999', '2023-03-13 17:08:21', '1', '2023-03-13 17:07:55', '1', '0', '2');
 
 -- ----------------------------
 -- Table structure for hydra_role_dept
@@ -709,69 +645,6 @@ INSERT INTO `hydra_role_menu` VALUES ('381', '21', '13', '9999', null, null, '20
 INSERT INTO `hydra_role_menu` VALUES ('382', '22', '13', '9999', null, null, '2023-03-13 17:07:56', null, '0', '1');
 
 -- ----------------------------
--- Table structure for hydra_tenant
--- ----------------------------
-DROP TABLE IF EXISTS `hydra_tenant`;
-CREATE TABLE `hydra_tenant` (
-  `tenant_id` bigint NOT NULL AUTO_INCREMENT COMMENT '租户ID',
-  `tenant_type` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '租户类型;0:公司;1:部门;2:个人;3:其他',
-  `tenant_status` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '用户状态;0:正常,1:停用',
-  `tenant_code` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '编码',
-  `tenant_name` varchar(64) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
-  `tenant_logo` varchar(128) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT 'logo图',
-  `sort_order` int DEFAULT NULL COMMENT '显示顺序',
-  `home_url` varchar(64) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '官方地址',
-  `phone` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '电话',
-  `fax` varchar(15) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '传真',
-  `email` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '邮箱',
-  `address` varchar(128) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '地址',
-  `user_name` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '管理员账号',
-  `user_pwd` varchar(64) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '管理员密码',
-  `package_id` bigint DEFAULT NULL COMMENT '套餐id',
-  `tenant_time` datetime DEFAULT NULL COMMENT '租赁到期时间',
-  `remarks` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '备注',
-  `updated_time` datetime DEFAULT NULL COMMENT '修改时间',
-  `updated_by` bigint DEFAULT NULL COMMENT '修改人的id',
-  `created_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `created_by` bigint DEFAULT NULL COMMENT '创建人的id',
-  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '逻辑删除 1已删除 0未删除',
-  `version` int NOT NULL DEFAULT '1' COMMENT '数据版本',
-  PRIMARY KEY (`tenant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='租户表';
-
--- ----------------------------
--- Records of hydra_tenant
--- ----------------------------
-INSERT INTO `hydra_tenant` VALUES ('4', '0', '0', '1000', '与之', 'https://hydra-1259663924.cos.ap-guangzhou.myqcloud.com/upload/house/1678248195183_logo.jpg', '0', 'http://yzcms.hydra.online', '13545678956', '020', '123', '广东省广州市海珠区', 'yz_admin', '123456', '3', '2024-03-07 08:00:00', '备注', '2023-03-13 14:31:38', '1', '2023-03-07 11:33:54', '1', '0', '2');
-INSERT INTO `hydra_tenant` VALUES ('6', '0', '0', '2000', '租户2', null, '2', null, '13546532356', null, null, null, 'test_admin', '123456', '2', '2023-03-31 08:00:00', null, null, null, '2023-03-09 15:07:43', '1', '0', '1');
-
--- ----------------------------
--- Table structure for hydra_tenant_package
--- ----------------------------
-DROP TABLE IF EXISTS `hydra_tenant_package`;
-CREATE TABLE `hydra_tenant_package` (
-  `package_id` bigint NOT NULL AUTO_INCREMENT COMMENT '套餐id',
-  `package_name` varchar(64) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
-  `menu_ids` varchar(1000) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '关联菜单id',
-  `status` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '状态;0:正常,1:停用',
-  `remarks` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '备注',
-  `updated_time` datetime DEFAULT NULL COMMENT '修改时间',
-  `updated_by` bigint DEFAULT NULL COMMENT '修改人的id',
-  `created_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `created_by` bigint DEFAULT NULL COMMENT '创建人的id',
-  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '逻辑删除 1已删除 0未删除',
-  `version` int NOT NULL DEFAULT '1' COMMENT '数据版本',
-  PRIMARY KEY (`package_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='租户套餐表';
-
--- ----------------------------
--- Records of hydra_tenant_package
--- ----------------------------
-INSERT INTO `hydra_tenant_package` VALUES ('1', '基础套餐', '5,7,8,13,14,6,15,16,17,18,27,38,39,41,42,43,44,45,46,1', '0', null, null, null, '2023-03-05 15:37:23', '1', '0', '1');
-INSERT INTO `hydra_tenant_package` VALUES ('2', '系统监控套餐', '19,20,21,22,23,24,25', '0', null, '2023-03-05 16:05:32', '1', '2023-03-05 15:54:29', '1', '0', '1');
-INSERT INTO `hydra_tenant_package` VALUES ('3', '默认套餐', '1,4,9,10,11,12,5,7,8,13,14,6,15,16,17,18,27,38,39,41,28,29,31,32,33,34,30,35,36,37,40,42,43,44,45,46,20,21,22,19', '0', null, null, null, '2023-03-13 14:21:31', '1', '0', '1');
-
--- ----------------------------
 -- Table structure for hydra_user
 -- ----------------------------
 DROP TABLE IF EXISTS `hydra_user`;
@@ -806,9 +679,6 @@ CREATE TABLE `hydra_user` (
 -- Records of hydra_user
 -- ----------------------------
 INSERT INTO `hydra_user` VALUES ('1', '1', '0', null, null, '', 'admin', '$2a$10$AtQatJCSY3L0qP07AlKf5OATykQ/OUAgNQMsd/IFoBXIY.1tJJE26', '超级管理员', null, '', '0', '', '', null, null, '9999', null, null, null, null, '0', '1');
-INSERT INTO `hydra_user` VALUES ('2', '1', '0', null, null, '', 'test', '$2a$10$AtQatJCSY3L0qP07AlKf5OATykQ/OUAgNQMsd/IFoBXIY.1tJJE26', '测试', null, '', '0', '', '', null, '1', '9999', '2023-03-13 16:23:18', '1', null, null, '0', '1');
-INSERT INTO `hydra_user` VALUES ('3', '1', '0', null, null, '', 'yz_admin', '$2a$10$.4xl5ya.74siMqLy/KmHUu504ZvaFox6h7uVSFgt/vWQSzm4A8o/S', '与之', '与之', '', '0', '', '', '13545678956', '6', '4', null, null, '2023-03-07 11:34:10', '1', '0', '1');
-INSERT INTO `hydra_user` VALUES ('5', '1', '0', null, null, '', 'test_admin', '$2a$10$C0IoRQdGlhcqoOzkUPB3oO3qoO4HwkiK.ndalBDahRYEXl73tKeqq', '租户2', '租户2', '', '0', '', '', '13546532356', '8', '6', null, null, '2023-03-09 15:07:44', '1', '0', '1');
 
 -- ----------------------------
 -- Table structure for hydra_user_role

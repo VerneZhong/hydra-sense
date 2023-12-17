@@ -3,6 +3,7 @@ package com.hydra.server.modules.system.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.hydra.common.domain.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,6 +22,7 @@ import java.util.List;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@TableName("hydra_user")
 @Accessors(chain = true)
 @ApiModel(value="XlUser对象", description="用户表")
 public class XlUser extends BaseEntity<XlUser> {

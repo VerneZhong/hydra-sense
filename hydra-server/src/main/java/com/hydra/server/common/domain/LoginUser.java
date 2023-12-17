@@ -76,16 +76,6 @@ public class LoginUser implements UserDetails {
      */
     private XlUser user;
 
-    /**
-     * 租户租赁截止日期--dhr
-     */
-    private Date tenantEndDate;
-
-    /**
-     * 租户状态
-     */
-    private Integer tenantStatus;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

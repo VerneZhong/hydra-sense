@@ -47,7 +47,8 @@ public class XlMenuServiceImpl extends ServiceImpl<XlMenuMapper, XlMenu> impleme
 
     @Override
     public boolean delete(List<Long> ids) {
-        return removeByIds(ids);
+        return removeBatchByIds(ids);
+//        return removeByIds(ids);
     }
 
     @Override
