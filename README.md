@@ -77,25 +77,6 @@ easyexcel| 2.2.6| 简化导入导出工具
 
 # 数据库表结构
 
-![登录页](doc/image/sql.PNG)
-
-# 开发规约
-
-## 命名规则
-
-- url路径采用 脊柱命名法(server-address)
-
-## 接口定义规则
-
-- 创建表记录：POST /{控制器路由名称}/create
-- 修改表记录：POST /{控制器路由名称}/update/{id}
-- 删除指定表记录：POST /{控制器路由名称}/delete/{id}
-- 分页查询表记录：GET /{控制器路由名称}/list-page
-- 获取指定记录详情：GET /{控制器路由名称}/{id}
-
-具体参数及返回结果定义可以运行代码查看Swagger-UI的Api文档：http://localhost:7000/doc.html
-
-
 # 项目特点
 
 序号     | 模快 |  说明 |
@@ -116,12 +97,11 @@ easyexcel| 2.2.6| 简化导入导出工具
 13|缓存监控|监视当前缓存的相关信息。
 
 ## 本地部署
-进入 hydra-server 模块，运行 hydraServerApplication 类，即可启动
-
+进入 hydra-server 模块，运行 HydraServerApplication类，即可启动
 
 ## linux部署
-
-
+服务器需要Java8以上的环境，打成jar包后直接部署在Linux服务器中
+命令：nohup java -jar hydra-server.jar > hydra-server.log 2>&1 &
 
 ## 项目演示
 * 演示地址：http://localhost:9528
@@ -130,21 +110,3 @@ easyexcel| 2.2.6| 简化导入导出工具
 ## 系统效果图展示
 
 ![登录页](doc/image/1.jpg)
-
-![输入图片说明](doc/image/2.jpg)
-
-![输入图片说明](doc/image/3.jpg)
-
-![输入图片说明](doc/image/4.jpg)
-
-![输入图片说明](doc/image/5.jpg)
-
-![输入图片说明](doc/image/6.jpg)
-
-
-
-
-
-
-
-
