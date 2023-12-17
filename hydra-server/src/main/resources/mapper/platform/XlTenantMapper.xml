@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectXlTenantVo">
-        select tenant_id, tenant_type, tenant_status, tenant_code, tenant_name, tenant_logo, sort_order, home_url, phone, fax, email, address, user_name, user_pwd, package_id,tenant_time, remarks, updated_time, updated_by, created_time, created_by, deleted, version from xl_tenant
+        select tenant_id, tenant_type, tenant_status, tenant_code, tenant_name, tenant_logo, sort_order, home_url, phone, fax, email, address, user_name, user_pwd, package_id,tenant_time, remarks, updated_time, updated_by, created_time, created_by, deleted, version from hydra_tenant
     </sql>
 
     <select id="selectXlTenantList"  resultType="com.hydra.server.modules.platform.vo.TenantResultVo">
@@ -59,7 +59,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <delete id="deleteTenantByIds" parameterType="String">
-        delete from xl_tenant where tenant_id in
+        delete from hydra_tenant where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>

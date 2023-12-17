@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 import java.util.Date;
 
 /**
- * 租户表对象 xl_tenant
+ * 租户表对象 hydra_tenant
  *
  * @author hydra
  * @date 2023-03-03
@@ -20,7 +20,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("xl_tenant")
+@TableName("hydra_tenant")
 public class XlTenant extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

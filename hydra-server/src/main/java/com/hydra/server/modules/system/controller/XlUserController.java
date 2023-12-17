@@ -7,7 +7,6 @@ import com.hydra.common.annotation.Log;
 import com.hydra.common.constant.UserConstants;
 import com.hydra.common.enums.BusinessType;
 import com.hydra.common.result.R;
-import com.hydra.common.utils.file.CosClientUtils;
 
 import com.hydra.server.common.component.JwtToken;
 import com.hydra.server.common.domain.LoginUser;
@@ -135,7 +134,8 @@ public class XlUserController {
     @PostMapping("/profile/avatar")
     public R uploadAvatar(@RequestParam("avatarfile") MultipartFile file) throws Exception {
         if (!file.isEmpty()) {
-            String avatar = CosClientUtils.upload(file, "avatar");
+//            String avatar = CosClientUtils.upload(file, "avatar");
+            String avatar = "";
             if (userService.updateUserAvatar(SecurityUtils.getUserId(), avatar)) {
                 // 更新缓存用户头像
                 LoginUser loginUser = SecurityUtils.getLoginUser();

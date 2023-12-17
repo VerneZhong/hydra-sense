@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 #if($table.sub)
 import java.util.ArrayList;
-import com.hydra.common.utils.StringUtils;
+import utils.com.hydra.common.StringUtils;
 import org.springframework.transaction.annotation.Transactional;
 import ${packageName}.entity.${subClassName};
 #end

@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectXlLoginLogVo">
-        select login_id, user_code, ipaddr, login_location, browser, os, msg, status, login_time, updated_time, updated_by, created_time, created_by, deleted, version from xl_login_log
+        select login_id, user_code, ipaddr, login_location, browser, os, msg, status, login_time, updated_time, updated_by, created_time, created_by, deleted, version from hydra_login_log
     </sql>
 
     <select id="selectXlLoginLogList"  resultMap="XlLoginLogResult">
@@ -49,6 +49,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <update id="cleanLoginlog">
-        truncate table xl_login_log
+        truncate table hydra_login_log
     </update>
 </mapper>

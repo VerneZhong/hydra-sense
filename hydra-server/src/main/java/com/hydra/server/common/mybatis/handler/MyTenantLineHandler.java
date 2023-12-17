@@ -23,7 +23,7 @@ public class MyTenantLineHandler implements TenantLineHandler {
     /**
      * 排除过滤的表
      */
-    private static final String[] TABLE_FILTER = {"xl_menu","xl_tenant_package","xl_tenant","xl_dict","xl_dict_data"};
+    private static final String[] TABLE_FILTER = {"hydra_menu","hydra_tenant_package","hydra_tenant","hydra_dict","hydra_dict_data"};
 
     /**
      * 排除过滤的表前缀

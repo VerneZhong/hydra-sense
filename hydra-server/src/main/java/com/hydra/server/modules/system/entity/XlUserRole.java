@@ -20,7 +20,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@TableName("xl_user_role")
+@TableName("hydra_user_role")
 @ApiModel(value = "XlUserRole对象", description = "用户角色关联表")
 public class XlUserRole implements Serializable {
 

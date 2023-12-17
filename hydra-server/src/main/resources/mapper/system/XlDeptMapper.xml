@@ -24,7 +24,7 @@
 
     <sql id="selectDeptVo">
         select d.dept_id, d.parent_id, d.ancestors, d.dept_name, d.sort, d.leader, d.phone, d.email, d.status, d.dept_level, d.created_by, d.created_time
-        from xl_dept d
+        from hydra_dept d
     </sql>
 
     <select id="selectDeptList" resultMap="BaseResultMap">
@@ -48,11 +48,11 @@
     </select>
 
     <select id="selectChildrenDeptById" resultMap="BaseResultMap">
-        select * from xl_dept where deleted = 0 and find_in_set(#{deptId}, ancestors)
+        select * from hydra_dept where deleted = 0 and find_in_set(#{deptId}, ancestors)
     </select>
 
     <delete id="deleteDeptByTenantId">
-        delete from xl_dept where tenant_id in
+        delete from hydra_dept where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
@@ -60,11 +60,11 @@
 
     <select id="selectDeptListByRoleId" resultType="Long">
         select d.dept_id
-        from xl_dept d
-        left join xl_role_dept rd on d.dept_id = rd.dept_id
+        from hydra_dept d
+        left join hydra_role_dept rd on d.dept_id = rd.dept_id
         where rd.role_id = #{roleId}
         <if test="deptCheckStrictly">
-            and d.dept_id not in (select d.parent_id from xl_dept d inner join xl_role_dept rd on d.dept_id = rd.dept_id and rd.role_id = #{roleId})
+            and d.dept_id not in (select d.parent_id from hydra_dept d inner join hydra_role_dept rd on d.dept_id = rd.dept_id and rd.role_id = #{roleId})
         </if>
         order by d.parent_id, d.sort
     </select>

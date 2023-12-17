@@ -17,25 +17,25 @@
     </resultMap>
 
     <delete id="deleteRoleDeptByTenantId">
-        delete from xl_role_dept where tenant_id in
+        delete from hydra_role_dept where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
 
     <delete id="deleteRoleDeptByRoleId" parameterType="Long">
-        delete from xl_role_dept where role_id = #{roleId}
+        delete from hydra_role_dept where role_id = #{roleId}
     </delete>
 
     <insert id="batchRoleDept">
-        insert into xl_role_dept(role_id, dept_id) values
+        insert into hydra_role_dept(role_id, dept_id) values
         <foreach item="item" index="index" collection="list" separator=",">
             (#{item.roleId},#{item.deptId})
         </foreach>
     </insert>
 
     <delete id="deleteRoleDept" parameterType="Long">
-        delete from xl_role_dept where role_id in
+        delete from hydra_role_dept where role_id in
         <foreach collection="array" item="roleId" open="(" separator="," close=")">
             #{roleId}
         </foreach>

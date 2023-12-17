@@ -31,7 +31,7 @@
     <select id="selectMenuList" resultType="com.hydra.server.modules.system.entity.XlMenu">
         select distinct m.menu_id, m.parent_id, m.menu_name, m.path, m.component, m.router_query,m.permission,
         m.visible, m.status, m.menu_code, m.is_frame, m.menu_type, m.icon, m.sort, m.created_time
-        from xl_menu m
+        from hydra_menu m
         <where>
             <if test="menuName != null and menuName != ''">
                 AND m.menu_name like concat('%', #{menuName}, '%')
@@ -49,10 +49,10 @@
     <select id="selectMenuListByUserId" resultType="com.hydra.server.modules.system.entity.XlMenu">
         select distinct m.menu_id, m.parent_id, m.menu_name, m.path, m.component, m.router_query,m.permission,
         m.visible, m.status, m.menu_code, m.is_frame, m.menu_type, m.icon, m.sort, m.created_time
-        from xl_menu m
-        left join xl_role_menu rm on m.menu_id = rm.menu_id
-        left join xl_user_role ur on rm.role_id = ur.role_id
-        left join xl_role ro on ur.role_id = ro.role_id
+        from hydra_menu m
+        left join hydra_role_menu rm on m.menu_id = rm.menu_id
+        left join hydra_user_role ur on rm.role_id = ur.role_id
+        left join hydra_role ro on ur.role_id = ro.role_id
         where ur.user_id = #{userId}
         <if test="menu.menuName != null and menu.menuName != ''">
             AND m.menu_name like concat('%', #{menu.menuName}, '%')
@@ -68,23 +68,23 @@
 
     <select id="selectMenuListByRoleId" resultType="Long">
         select m.menu_id
-        from xl_menu m
-        left join xl_role_menu rm on m.menu_id = rm.menu_id
+        from hydra_menu m
+        left join hydra_role_menu rm on m.menu_id = rm.menu_id
         where m.deleted = 0
         and rm.deleted = 0
         and rm.role_id = #{roleId}
         <if test="menuCheckStrictly">
-            and m.menu_id not in (select m.parent_id from xl_menu m inner join xl_role_menu rm on m.menu_id = rm.menu_id and rm.role_id = #{roleId})
+            and m.menu_id not in (select m.parent_id from hydra_menu m inner join hydra_role_menu rm on m.menu_id = rm.menu_id and rm.role_id = #{roleId})
         </if>
         order by m.parent_id, m.sort
     </select>
 
     <select id="selectMenuPermsByUserId" resultType="String">
         select distinct m.permission
-		from xl_menu m
-			 left join xl_role_menu rm on m.menu_id = rm.menu_id
-			 left join xl_user_role ur on rm.role_id = ur.role_id
-			 left join xl_role r on r.role_id = ur.role_id
+		from hydra_menu m
+			 left join hydra_role_menu rm on m.menu_id = rm.menu_id
+			 left join hydra_user_role ur on rm.role_id = ur.role_id
+			 left join hydra_role r on r.role_id = ur.role_id
 		where m.deleted = 0 and rm.deleted = 0 and ur.deleted = 0 and r.deleted = 0
 		and m.status = 0 and r.status = 0 and ur.user_id = #{userId}
     </select>
@@ -92,18 +92,18 @@
     <select id="selectMenuTreeAll" resultMap="BaseResultMap">
         select distinct m.menu_id, m.parent_id, m.menu_name, m.path, m.component, m.router_query, m.visible, m.status,
         ifnull(m.permission,'') as permission, m.is_frame, m.menu_type, m.icon, m.sort
-		from xl_menu m where m.deleted = 0 and m.menu_type in (0, 1) and m.status = 0
+		from hydra_menu m where m.deleted = 0 and m.menu_type in (0, 1) and m.status = 0
 		order by m.parent_id, m.sort
     </select>
 
     <select id="selectMenuTreeByUserId" resultMap="BaseResultMap">
         select distinct m.menu_id, m.parent_id, m.menu_name, m.path, m.component, m.router_query, m.visible, m.status,
         ifnull(m.permission,'') as permission, m.is_frame, m.menu_type, m.icon, m.sort
-		from xl_menu m
-         left join xl_role_menu rm on m.menu_id = rm.menu_id
-         left join xl_user_role ur on rm.role_id = ur.role_id
-         left join xl_role r on ur.role_id = r.role_id
-         left join xl_user u on ur.user_id = u.user_id
+		from hydra_menu m
+         left join hydra_role_menu rm on m.menu_id = rm.menu_id
+         left join hydra_user_role ur on rm.role_id = ur.role_id
+         left join hydra_role r on ur.role_id = r.role_id
+         left join hydra_user u on ur.user_id = u.user_id
 		where m.deleted = 0 and rm.deleted = 0 and ur.deleted = 0 and r.deleted = 0 and r.deleted = 0 and u.deleted = 0
 		and u.user_id = #{userId} and m.menu_type in (0, 1) and m.status = 0  AND r.status = 0
 		order by m.parent_id, m.sort
@@ -111,7 +111,7 @@
 
     <select id="selectSimpleMenuList" resultType="com.hydra.server.modules.system.vo.SimpleMenu">
         select menu_id as id,menu_name as name,parent_id as parentId, menu_type as type
-        from xl_menu
+        from hydra_menu
         where status = 0
     </select>
 </mapper>

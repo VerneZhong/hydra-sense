@@ -18,7 +18,7 @@ import java.util.Set;
  * @since 2022-07-01
  */
 @Data
-@TableName("xl_role")
+@TableName("hydra_role")
 @NoArgsConstructor
 @ApiModel(value = "XlRole对象", description = "角色表")
 public class XlRole extends BaseEntity<XlRole> {

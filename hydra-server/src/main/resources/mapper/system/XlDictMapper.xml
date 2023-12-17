@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectXlDictVo">
-        select dict_id, dict_type, dict_name, status, remark, updated_time, updated_by, created_time, created_by, deleted, version from xl_dict
+        select dict_id, dict_type, dict_name, status, remark, updated_time, updated_by, created_time, created_by, deleted, version from hydra_dict
     </sql>
 
     <select id="selectXlDictList"  resultMap="XlDictResult">

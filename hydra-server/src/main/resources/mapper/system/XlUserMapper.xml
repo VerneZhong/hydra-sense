@@ -39,10 +39,10 @@
     <sql id="selectUserVo">
         select u.user_id, u.real_name, u.user_nickname, u.user_email, u.avatar,u.user_code, u.pass_word,u.sex,
         u.mobile, u.status,u.created_time,u.dept_id,u.tenant_id,d.dept_name, r.role_id, r.role_name, r.role_key, r.data_scope, r.status as role_status
-        from xl_user u
-        left join xl_user_role ur on u.user_id = ur.user_id and ur.deleted = 0
-        left join xl_role r on r.role_id = ur.role_id and r.deleted = 0
-        left join xl_dept d on u.dept_id = d.dept_id and d.deleted = 0
+        from hydra_user u
+        left join hydra_user_role ur on u.user_id = ur.user_id and ur.deleted = 0
+        left join hydra_role r on r.role_id = ur.role_id and r.deleted = 0
+        left join hydra_dept d on u.dept_id = d.dept_id and d.deleted = 0
     </sql>
 
     <select id="selectUserById" resultMap="BaseResultMap">
@@ -54,8 +54,8 @@
     <select id="selectUserList" resultMap="BaseResultMap">
         select u.user_id, u.real_name, u.user_nickname, u.user_email, u.avatar,u.user_code, u.pass_word,u.sex,
         u.mobile, u.status,u.dept_id,u.created_time, d.dept_name, d.leader
-        from xl_user u
-		left join xl_dept d on u.dept_id = d.dept_id and d.deleted = 0
+        from hydra_user u
+		left join hydra_dept d on u.dept_id = d.dept_id and d.deleted = 0
 		where u.deleted = 0
         <if test="user.userId != null and user.userId != 0">
             AND u.user_id = #{user.userId}
@@ -74,11 +74,11 @@
     </select>
 
     <select id="checkUserNameUnique" parameterType="String" resultType="int">
-        select count(1) from xl_user where user_code = #{userName} and deleted = 0 limit 1
+        select count(1) from hydra_user where user_code = #{userName} and deleted = 0 limit 1
     </select>
 
     <delete id="deleteUserByTenantId">
-        delete from xl_user where tenant_id in
+        delete from hydra_user where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
@@ -86,10 +86,10 @@
 
     <select id="selectAllocatedList"  resultType="com.hydra.server.modules.system.vo.RoleUserResultVo">
         select distinct u.user_id, u.dept_id, u.user_code, u.real_name, u.user_email, u.mobile, u.status, u.created_time
-        from xl_user u
-        left join xl_dept d on u.dept_id = d.dept_id
-        left join xl_user_role ur on u.user_id = ur.user_id
-        left join xl_role r on r.role_id = ur.role_id
+        from hydra_user u
+        left join hydra_dept d on u.dept_id = d.dept_id
+        left join hydra_user_role ur on u.user_id = ur.user_id
+        left join hydra_role r on r.role_id = ur.role_id
         where u.deleted = 0 and r.role_id = #{query.roleId}
         <if test="query.userCode != null and query.userCode != ''">
             AND u.user_code like concat('%', #{query.userCode}, '%')
@@ -103,12 +103,12 @@
 
     <select id="selectUnallocatedList"  resultType="com.hydra.server.modules.system.vo.RoleUserResultVo">
         select distinct u.user_id, u.dept_id, u.user_code, u.real_name, u.user_email, u.mobile, u.status, u.created_time
-        from xl_user u
-        left join xl_dept d on u.dept_id = d.dept_id
-        left join xl_user_role ur on u.user_id = ur.user_id
-        left join xl_role r on r.role_id = ur.role_id
+        from hydra_user u
+        left join hydra_dept d on u.dept_id = d.dept_id
+        left join hydra_user_role ur on u.user_id = ur.user_id
+        left join hydra_role r on r.role_id = ur.role_id
         where u.deleted = 0 and (r.role_id != #{query.roleId} or r.role_id IS NULL)
-        and u.user_id not in (select u.user_id from xl_user u inner join xl_user_role ur on u.user_id = ur.user_id and ur.role_id = #{query.roleId})
+        and u.user_id not in (select u.user_id from hydra_user u inner join hydra_user_role ur on u.user_id = ur.user_id and ur.role_id = #{query.roleId})
         <if test="query.userCode != null and query.userCode != ''">
             AND u.user_code like concat('%', #{query.userCode}, '%')
         </if>

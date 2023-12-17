@@ -1,18 +1,10 @@
-
-# xiliu-tenant 简介
-xiliu-tenant 采用B2B2C架构设计，支持多租户saas，是一套快速开发框架、脚手架、后台管理系统、权限系统，上手简单，拿来即用。
-如果这个项目让你有所收获，记得 Star 关注哦，这对我是非常不错的鼓励与支持。
-
-## 开源协议
-该项目采用MIT协议，无需授权，可以用来快速开发项目搭建直接商业。
-
-## 前端项目
-请移步[xiliu-tenant-ui](https://gitee.com/huoqstudy/xiliu-tenant-ui)
+hydra sense 简介
+Time series of humidity in head sensor of Pandora instrument
 
 ## 项目结构树
 ````
-xiliu-tenant
-├── xiliu-common --通用模块
+hydra-tenant
+├── hydra-common --通用模块
 |   ├── annotation -- 自定义注解目录
 |   ├── component -- 自定义组件目录
 |   ├── config -- 通用配置目录
@@ -23,7 +15,7 @@ xiliu-tenant
 |   ├── page -- 通用分页相关封装目录
 |   ├── result -- 通用返回目录
 |   ├── utils -- 通用工具类目录
-├── xiliu-generator --代码自动生成模块
+├── hydra-generator --代码自动生成模块
 |   ├── config -- 读取代码生成相关配置
 |   ├── constant -- 代码生成常量
 |   ├── controller -- 代码生成访问层
@@ -31,7 +23,7 @@ xiliu-tenant
 |   ├── mapper -- 代码生成mapper层
 |   ├── service --代码生成业务层 
 |   ├── utils -- 代码生成器工具类
-├── xiliu-server --业务模块
+├── hydra-server --业务模块
 |   ├── common -- 通用目录
 |       ├── aspect -- 切面目录
 |       ├── component -- token 组件目录
@@ -44,7 +36,7 @@ xiliu-tenant
 |       ├── basicdata -- 基础数据目录
 |       ├── monitor -- 系统监控目录
 |       ├── system -- 系统管理目录     
-|   ├── XiliuServerApplication -- 启动类
+|   ├── hydraServerApplication -- 启动类
 
 
 ````
@@ -124,7 +116,7 @@ easyexcel| 2.2.6| 简化导入导出工具
 13|缓存监控|监视当前缓存的相关信息。
 
 ## 本地部署
-进入 xiliu-server 模块，运行 XiliuServerApplication 类，即可启动
+进入 hydra-server 模块，运行 hydraServerApplication 类，即可启动
 
 
 ## linux部署
@@ -148,13 +140,6 @@ easyexcel| 2.2.6| 简化导入导出工具
 ![输入图片说明](doc/image/5.jpg)
 
 ![输入图片说明](doc/image/6.jpg)
-
-## 感谢
-* 本项目基于若依的前后端分离版，感谢ruoyi-vue
-
-
-## 常见问题
-* 若发现bug，请提Issues
 
 
 

@@ -11,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
- * 字典表对象 xl_dict
+ * 字典表对象 hydra_dict
  * 
  * @author hydra
  * @date 2022-08-09
@@ -19,7 +19,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("xl_dict")
+@TableName("hydra_dict")
 public class XlDict extends BaseEntity{
 
     private static final long serialVersionUID = 1L;

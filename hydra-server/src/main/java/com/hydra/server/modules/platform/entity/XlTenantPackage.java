@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 租户套餐表对象 xl_tenant_package
+ * 租户套餐表对象 hydra_tenant_package
  *
  * @author hydra
  * @date 2023-03-03
@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("xl_tenant_package")
+@TableName("hydra_tenant_package")
 public class XlTenantPackage extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

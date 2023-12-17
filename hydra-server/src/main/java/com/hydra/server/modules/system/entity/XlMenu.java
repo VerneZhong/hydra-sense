@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-@TableName("xl_menu")
+@TableName("hydra_menu")
 @ApiModel(value = "XlMenu对象", description = "菜单表")
 public class XlMenu implements Serializable {
 

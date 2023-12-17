@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectXlTenantPackageVo">
-        select package_id, package_name, menu_ids, status, remarks, updated_time, updated_by, created_time, created_by, deleted, version from xl_tenant_package
+        select package_id, package_name, menu_ids, status, remarks, updated_time, updated_by, created_time, created_by, deleted, version from hydra_tenant_package
     </sql>
 
     <select id="selectXlTenantPackageList"  resultMap="XlTenantPackageResult">
@@ -42,7 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="getSimpleList" resultType="com.hydra.server.modules.platform.vo.SimplePackage">
         select package_id id, package_name name
-        from xl_tenant_package
+        from hydra_tenant_package
         where deleted = 0 and status = '0'
     </select>
 

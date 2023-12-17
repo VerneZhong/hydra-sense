@@ -18,7 +18,7 @@ import java.util.List;
  * @since 2022-07-12
  */
 @Data
-@TableName("xl_dept")
+@TableName("hydra_dept")
 @ApiModel(value = "XlDept对象", description = "部门表")
 public class XlDept extends BaseEntity<XlDept> {
 

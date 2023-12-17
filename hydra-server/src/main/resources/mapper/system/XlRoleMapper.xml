@@ -23,9 +23,9 @@
     <sql id="selectRoleVo">
         select distinct r.role_id, r.role_name, r.role_key, r.data_scope, r.menu_check_strictly, r.dept_check_strictly,
         r.status, r.created_time, r.description
-        from xl_role r
-        left join xl_user_role ur on ur.role_id = r.role_id and ur.deleted = 0
-        left join xl_user u on u.user_id = ur.user_id and u.deleted = 0
+        from hydra_role r
+        left join hydra_user_role ur on ur.role_id = r.role_id and ur.deleted = 0
+        left join hydra_user u on u.user_id = ur.user_id and u.deleted = 0
     </sql>
 
     <select id="selectRoleById" parameterType="Long" resultMap="BaseResultMap">
@@ -58,19 +58,19 @@
     <select id="queryAdminRole" parameterType="Long" resultMap="BaseResultMap">
         select distinct r.role_id, r.role_name, r.role_key, r.data_scope, r.menu_check_strictly, r.dept_check_strictly,
         r.status, r.description,tenant_id
-        from xl_role r
+        from hydra_role r
         where r.tenant_id = #{tenantId} and r.role_key = 'admin' order by role_id desc
     </select>
 
     <delete id="deleteRoleByTenantId">
-        delete from xl_role where tenant_id in
+        delete from hydra_role where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
 
     <select id="countUserRoleByRoleId" resultType="Integer">
-        select count(1) from xl_user_role where role_id=#{roleId}
+        select count(1) from hydra_user_role where role_id=#{roleId}
     </select>
 
 </mapper>

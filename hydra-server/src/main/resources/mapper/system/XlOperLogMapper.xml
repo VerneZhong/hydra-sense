@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectXlOperLogVo">
-        select oper_id, title, business_type, method, request_method, operator_type, oper_name, oper_url, oper_ip, oper_location, oper_param, json_result, status, error_msg, oper_time, dept_name, dept_id, updated_time, updated_by, created_time, created_by, deleted, version from xl_oper_log
+        select oper_id, title, business_type, method, request_method, operator_type, oper_name, oper_url, oper_ip, oper_location, oper_param, json_result, status, error_msg, oper_time, dept_name, dept_id, updated_time, updated_by, created_time, created_by, deleted, version from hydra_oper_log
     </sql>
 
     <select id="selectXlOperLogList" resultMap="XlOperLogResult">

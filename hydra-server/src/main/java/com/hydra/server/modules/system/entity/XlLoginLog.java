@@ -14,14 +14,14 @@ import java.util.Date;
 
 
 /**
- * 系统访问日志表对象 xl_login_log
+ * 系统访问日志表对象 hydra_login_log
  * 
  * @author hydra
  * @date 2022-07-25
  */
 @ExcelIgnoreUnannotated
 @Data
-@TableName("xl_login_log")
+@TableName("hydra_login_log")
 @ApiModel(value = "XlLoginLog对象", description = "登录日志表")
 public class XlLoginLog extends BaseEntity {
 

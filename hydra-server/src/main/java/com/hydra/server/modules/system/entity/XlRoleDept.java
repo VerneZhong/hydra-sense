@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * 角色部门表对象 xl_dict_data
+ * 角色部门表对象 hydra_dict_data
  * 
  * @author hydra
  * @date 2022-08-25
@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("xl_role_dept")
+@TableName("hydra_role_dept")
 public class XlRoleDept extends BaseEntity{
 
     private static final long serialVersionUID = 1L;

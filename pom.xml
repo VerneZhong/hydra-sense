@@ -11,15 +11,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.java.xiliu</groupId>
-    <artifactId>xiliu-tenant</artifactId>
+    <groupId>com.hydra</groupId>
+    <artifactId>hydra-sense</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>xiliu-common</module>
-        <module>xiliu-generator</module>
-        <module>xiliu-server</module>
+        <module>hydra-common</module>
+        <module>hydra-generator</module>
+        <module>hydra-server</module>
 
     </modules>
 
@@ -49,13 +49,9 @@
         <oshi-version>6.1.6</oshi-version>
         <!-- easyexcel -->
         <easyexcel.version>2.2.6</easyexcel.version>
-        <!--腾讯云 COS 对象存储-->
-        <cos-version>5.6.89</cos-version>
-        <!--腾讯云 COS 临时密钥-->
-        <cos_sts-version>3.1.1</cos_sts-version>
-        <xiliu-common.version>1.0-SNAPSHOT</xiliu-common.version>
-        <xiliu-generator.version>1.0-SNAPSHOT</xiliu-generator.version>
-        <xiliu-server.version>1.0-SNAPSHOT</xiliu-server.version>
+        <hydra-common.version>1.0-SNAPSHOT</hydra-common.version>
+        <hydra-generator.version>1.0-SNAPSHOT</hydra-generator.version>
+        <hydra-server.version>1.0-SNAPSHOT</hydra-server.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -133,35 +129,23 @@
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
             </dependency>
-            <!--腾讯云 COS 对象存储-->
-            <dependency>
-                <groupId>com.qcloud</groupId>
-                <artifactId>cos_api</artifactId>
-                <version>${cos-version}</version>
-            </dependency>
-            <!--腾讯云 COS 临时密钥-->
-            <dependency>
-                <groupId>com.qcloud</groupId>
-                <artifactId>cos-sts_api</artifactId>
-                <version>${cos_sts-version}</version>
-            </dependency>
             <!--通用模块-->
             <dependency>
-                <groupId>com.java.xiliu</groupId>
-                <artifactId>xiliu-common</artifactId>
-                <version>${xiliu-common.version}</version>
+                <groupId>com.hydra</groupId>
+                <artifactId>hydra-common</artifactId>
+                <version>${hydra-common.version}</version>
             </dependency>
             <!--代码生成模块-->
             <dependency>
-                <groupId>com.java.xiliu</groupId>
-                <artifactId>xiliu-generator</artifactId>
-                <version>${xiliu-generator.version}</version>
+                <groupId>com.hydra</groupId>
+                <artifactId>hydra-generator</artifactId>
+                <version>${hydra-generator.version}</version>
             </dependency>
             <!--服务模块-->
             <dependency>
-                <groupId>com.java.xiliu</groupId>
-                <artifactId>xiliu-server</artifactId>
-                <version>${xiliu-server.version}</version>
+                <groupId>com.hydra</groupId>
+                <artifactId>hydra-server</artifactId>
+                <version>${hydra-server.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

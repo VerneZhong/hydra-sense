@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectXlDictDataVo">
-        select dict_data_id, dict_type, dict_label, dict_value, sort, is_default, list_class, status, remark, updated_time, updated_by, created_time, created_by, deleted, version from xl_dict_data
+        select dict_data_id, dict_type, dict_label, dict_value, sort, is_default, list_class, status, remark, updated_time, updated_by, created_time, created_by, deleted, version from hydra_dict_data
     </sql>
 
     <select id="selectXlDictDataList"  resultMap="XlDictDataResult" parameterType="com.hydra.server.modules.system.entity.XlDictData">

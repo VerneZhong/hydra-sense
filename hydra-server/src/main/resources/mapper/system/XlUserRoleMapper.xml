@@ -17,18 +17,18 @@
     </resultMap>
 
     <delete id="deleteUserRoleByTenantId">
-        delete from xl_user_role where tenant_id in
+        delete from hydra_user_role where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
 
     <delete id="deleteUserRoleInfo"  >
-        delete from xl_user_role where user_id=#{userId} and role_id=#{roleId}
+        delete from hydra_user_role where user_id=#{userId} and role_id=#{roleId}
     </delete>
 
     <delete id="deleteUserRoleInfos">
-        delete from xl_user_role where role_id=#{roleId} and user_id in
+        delete from hydra_user_role where role_id=#{roleId} and user_id in
         <foreach collection="userIds" item="userId" open="(" separator="," close=")">
             #{userId}
         </foreach>

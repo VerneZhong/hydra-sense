@@ -2108,8 +2108,8 @@ LABL 0 新宋体,8,N</a:FontList>
 <c:Tables>
 <o:Table Id="o26">
 <a:ObjectID>36E48F39-D037-437E-8DFD-B2F7F40B87A5</a:ObjectID>
-<a:Name>xl_user[用户表]</a:Name>
-<a:Code>xl_user</a:Code>
+<a:Name>hydra_user[用户表]</a:Name>
+<a:Code>hydra_user</a:Code>
 <a:CreationDate>1630656236</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1677823830</a:ModificationDate>
@@ -2434,8 +2434,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o27">
 <a:ObjectID>E9C2E62D-3528-49CB-977E-B7F0BFD5C86A</a:ObjectID>
-<a:Name>xl_role[角色表]</a:Name>
-<a:Code>xl_role</a:Code>
+<a:Name>hydra_role[角色表]</a:Name>
+<a:Code>hydra_role</a:Code>
 <a:CreationDate>1630656236</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1677574989</a:ModificationDate>
@@ -2656,8 +2656,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o28">
 <a:ObjectID>A73A88FD-8DDD-4F2B-A53F-5066C6559F52</a:ObjectID>
-<a:Name>xl_role_menu[菜单角色关联表]</a:Name>
-<a:Code>xl_role_menu</a:Code>
+<a:Name>hydra_role_menu[菜单角色关联表]</a:Name>
+<a:Code>hydra_role_menu</a:Code>
 <a:CreationDate>1630656236</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1678090111</a:ModificationDate>
@@ -2814,8 +2814,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o29">
 <a:ObjectID>26BC34FA-DD29-4AD5-B003-A6324A632996</a:ObjectID>
-<a:Name>xl_menu[菜单表]</a:Name>
-<a:Code>xl_menu</a:Code>
+<a:Name>hydra_menu[菜单表]</a:Name>
+<a:Code>hydra_menu</a:Code>
 <a:CreationDate>1630656236</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1676974246</a:ModificationDate>
@@ -3122,8 +3122,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o30">
 <a:ObjectID>79B43CBA-598A-4636-86A9-139AC770A663</a:ObjectID>
-<a:Name>xl_user_role[用户角色关联表]</a:Name>
-<a:Code>xl_user_role</a:Code>
+<a:Name>hydra_user_role[用户角色关联表]</a:Name>
+<a:Code>hydra_user_role</a:Code>
 <a:CreationDate>1630656236</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1678090124</a:ModificationDate>
@@ -3280,8 +3280,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o32">
 <a:ObjectID>12285D53-A70E-4186-BB12-98A000FC4268</a:ObjectID>
-<a:Name>xl_dept[部门表]</a:Name>
-<a:Code>xl_dept</a:Code>
+<a:Name>hydra_dept[部门表]</a:Name>
+<a:Code>hydra_dept</a:Code>
 <a:CreationDate>1657612106</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1677575210</a:ModificationDate>
@@ -3522,8 +3522,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o33">
 <a:ObjectID>7B5C1702-16AE-4BD1-87A2-FC51C27C563D</a:ObjectID>
-<a:Name>xl_dict[字典表]</a:Name>
-<a:Code>xl_dict</a:Code>
+<a:Name>hydra_dict[字典表]</a:Name>
+<a:Code>hydra_dict</a:Code>
 <a:CreationDate>1657769511</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1676972456</a:ModificationDate>
@@ -3692,8 +3692,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o35">
 <a:ObjectID>69F930E1-6143-4304-829B-8A7288A6390A</a:ObjectID>
-<a:Name>xl_oper_log[操作日志表]</a:Name>
-<a:Code>xl_oper_log</a:Code>
+<a:Name>hydra_oper_log[操作日志表]</a:Name>
+<a:Code>hydra_oper_log</a:Code>
 <a:CreationDate>1657770720</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1677575156</a:ModificationDate>
@@ -4018,8 +4018,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o37">
 <a:ObjectID>6E3E29C7-1A94-457D-B03E-A6589A59A8FB</a:ObjectID>
-<a:Name>xl_login_log[系统访问日志表]</a:Name>
-<a:Code>xl_login_log</a:Code>
+<a:Name>hydra_login_log[系统访问日志表]</a:Name>
+<a:Code>hydra_login_log</a:Code>
 <a:CreationDate>1657771427</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1677575136</a:ModificationDate>
@@ -4872,8 +4872,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o40">
 <a:ObjectID>7A0E94CC-92F8-47D4-9528-1E9CFC1E434B</a:ObjectID>
-<a:Name>xl_dict_data[字典数据表]</a:Name>
-<a:Code>xl_dict_data</a:Code>
+<a:Name>hydra_dict_data[字典数据表]</a:Name>
+<a:Code>hydra_dict_data</a:Code>
 <a:CreationDate>1661408958</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1673598515</a:ModificationDate>
@@ -5090,8 +5090,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o42">
 <a:ObjectID>E9302E36-AA43-4B96-A876-4AB33B60EBAC</a:ObjectID>
-<a:Name>xl_tenant[租户表]</a:Name>
-<a:Code>xl_tenant</a:Code>
+<a:Name>hydra_tenant[租户表]</a:Name>
+<a:Code>hydra_tenant</a:Code>
 <a:CreationDate>1676969567</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1678005034</a:ModificationDate>
@@ -5414,8 +5414,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o44">
 <a:ObjectID>ADFE1925-CCBA-498A-912C-E5EAA1BB19A4</a:ObjectID>
-<a:Name>xl_tenant_package[租户套餐表]</a:Name>
-<a:Code>xl_tenant_package</a:Code>
+<a:Name>hydra_tenant_package[租户套餐表]</a:Name>
+<a:Code>hydra_tenant_package</a:Code>
 <a:CreationDate>1677828280</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1677828519</a:ModificationDate>
@@ -5587,8 +5587,8 @@ LABL 0 新宋体,8,N</a:FontList>
 </o:Table>
 <o:Table Id="o46">
 <a:ObjectID>332640B2-8D45-47BD-8E9F-E46F41CD53B1</a:ObjectID>
-<a:Name>xl_role_dept[角色部门关联表]</a:Name>
-<a:Code>xl_role_dept</a:Code>
+<a:Name>hydra_role_dept[角色部门关联表]</a:Name>
+<a:Code>hydra_role_dept</a:Code>
 <a:CreationDate>1678348036</a:CreationDate>
 <a:Creator>27776</a:Creator>
 <a:ModificationDate>1678348142</a:ModificationDate>

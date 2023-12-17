@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>hydra-sense</artifactId>
-        <groupId>com.java.hydra</groupId>
+        <groupId>com.hydra</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -22,7 +22,7 @@
 
         <!-- 通用模快-->
         <dependency>
-            <groupId>com.java.hydra</groupId>
+            <groupId>com.hydra</groupId>
             <artifactId>hydra-common</artifactId>
         </dependency>
 

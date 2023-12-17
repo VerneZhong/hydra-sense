@@ -17,18 +17,18 @@
     </resultMap>
 
     <delete id="deleteRoleMenuByTenantId" parameterType="Long">
-        delete from xl_role_menu where tenant_id = #{tenantId}
+        delete from hydra_role_menu where tenant_id = #{tenantId}
     </delete>
 
     <delete id="deleteRoleMenuByTenantIds">
-        delete from xl_role_menu where tenant_id in
+        delete from hydra_role_menu where tenant_id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
 
     <delete id="deleteRoleMenu" parameterType="Long">
-        delete from xl_role_menu where role_id in
+        delete from hydra_role_menu where role_id in
         <foreach collection="array" item="roleId" open="(" separator="," close=")">
             #{roleId}
         </foreach>
