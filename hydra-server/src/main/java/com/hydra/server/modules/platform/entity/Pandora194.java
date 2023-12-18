@@ -16,18 +16,16 @@ import java.time.LocalDateTime;
  * @date 2023/12/17 12:41
  */
 @Data
-@TableName("hydra_dept")
-@ApiModel(value = "XlDept对象", description = "部门表")
-public class HumidityPandora176 extends BaseEntity<HumidityPandora176> {
+@TableName("Pandora_194")
+@ApiModel(value = "Pandora对象", description = "潘多拉表")
+public class Pandora194 extends BaseEntity<Pandora194> {
 
     /** 主键ID */
     @ApiModelProperty("主键ID")
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    private Long indexId;
-
-    private String filePath;
+    private String fileName;
 
     private String humidity;
 
