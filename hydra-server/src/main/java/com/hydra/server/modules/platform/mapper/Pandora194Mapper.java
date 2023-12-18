@@ -17,13 +17,13 @@ public interface Pandora194Mapper extends BaseMapper<Pandora194>{
      * @param id 【请填写功能名称】主键
      * @return 【请填写功能名称】
      */
-    Pandora194 selectPandora176ById(Long id);
+    Pandora194 selectPandora194ById(Long id);
 
     /**
      * 查询【请填写功能名称】列表
      * @param pandora176 【请填写功能名称】
      * @return 【请填写功能名称】集合
      */
-   List<Pandora194> selectPandora176List(Pandora194 pandora176);
+   List<Pandora194> selectPandora194List(Pandora194 pandora176);
 
 }

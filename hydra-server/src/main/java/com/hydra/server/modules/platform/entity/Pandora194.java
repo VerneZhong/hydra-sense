@@ -27,7 +27,7 @@ public class Pandora194 extends BaseEntity<Pandora194> {
 
     private String fileName;
 
-    private String humidity;
+    private Float humidity;
 
     private LocalDateTime time;
 }
