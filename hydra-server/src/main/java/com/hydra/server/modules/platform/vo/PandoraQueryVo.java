@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  */
 @Data
 public class PandoraQueryVo {
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private String startTime;
+    private String endTime;
     private int pandoraType;
 }

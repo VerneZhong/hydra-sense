@@ -59,10 +59,8 @@ public class Pandora176ServiceImpl extends ServiceImpl<Pandora176Mapper, Pandora
 
     @Override
     public List<PandoraVo> queryList(PandoraQueryVo vo) {
-        QueryWrapper<Pandora176> wrapper = new QueryWrapper<>();
-        wrapper.le("time", vo.getStartTime());
-        wrapper.ge("time", vo.getEndTime());
-        return pandora176Mapper.selectList(wrapper).stream()
+        return pandora176Mapper.selectPandoraList(vo.getStartTime(), vo.getEndTime())
+                .stream()
                 .map(pandora176 -> PandoraVo.builder()
                         .humidity(pandora176.getHumidity())
                         .time(pandora176.getTime())

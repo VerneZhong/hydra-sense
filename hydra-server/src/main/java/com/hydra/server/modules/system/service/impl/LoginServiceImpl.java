@@ -136,7 +136,6 @@ public class LoginServiceImpl implements LoginService {
             throw new ServiceException("密码错误");
         };
         //线程塞入租户ID
-        SecurityUtils.setTenantId(Convert.toStr(user.getTenantId()));
         if (user.getStatus().intValue() == 1) {
             // 登录记录日志
             AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户已停用，请联系管理员"));

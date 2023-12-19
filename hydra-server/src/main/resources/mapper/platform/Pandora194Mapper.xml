@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectHumidityPandora194Vo">
-        select id, file_name, humidity, time from Pandora_176
+        select id, file_name, humidity, time from Pandora_194
     </sql>
 
     <select id="selectPandora194List"  resultMap="Pandora194Result">
@@ -23,6 +23,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectHumidityPandora194Vo"/>
         where id = #{id}
     </select>
-        
 
+    <select id="selectPandoraList" resultMap="Pandora194Result">
+        <include refid="selectHumidityPandora194Vo"/>
+        <where>
+            time &lt; #{endTime,jdbcType=VARCHAR}
+            and time &gt; #{startTime,jdbcType=VARCHAR}
+        </where>
+    </select>
 </mapper>

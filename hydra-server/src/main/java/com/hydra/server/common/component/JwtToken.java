@@ -252,15 +252,12 @@ public class JwtToken {
         claimsMap.put(SecurityConstants.USER_KEY, token);
         claimsMap.put(SecurityConstants.DETAILS_USER_ID, userId);
         claimsMap.put(SecurityConstants.DETAILS_USERNAME, userName);
-        //租户id
-        claimsMap.put(SecurityConstants.DETAILS_TENANT_ID, tenantId);
         //部门id
         claimsMap.put(SecurityConstants.DETAILS_DEPT_ID, deptId);
         // 接口返回信息
         Map<String, Object> rspMap = new HashMap<String, Object>();
         rspMap.put("token", this.createToken(claimsMap));
         rspMap.put("expires_in", expire);
-        rspMap.put("tenant_id", tenantId);
         rspMap.put("tokenHead", tokenHead);
         return rspMap;
     }
@@ -301,7 +298,6 @@ public class JwtToken {
                 String uuid = (String) claims.get(SecurityConstants.USER_KEY);
                 String userKey = getTokenKey(uuid);
                 LoginUser loginUser = redisCache.getCacheObject(userKey);
-                com.hydra.common.context.SecurityContextHolder.set(SecurityConstants.DETAILS_TENANT_ID, loginUser.getUser().getTenantId());
                 com.hydra.common.context.SecurityContextHolder.set(SecurityConstants.LOGIN_USER, loginUser);
                 return loginUser;
             } catch (Exception e) {

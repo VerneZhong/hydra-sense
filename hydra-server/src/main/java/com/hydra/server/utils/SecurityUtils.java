@@ -100,17 +100,4 @@ public class SecurityUtils {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.matches(rawPassword, encodedPassword);
     }
-    /**
-     * 获取租户ID
-     */
-    public static Long getTenantId() {
-        return com.hydra.common.context.SecurityContextHolder.getTenantId();
-    }
-
-    /**
-     * 设置租户ID
-     */
-    public static void setTenantId(String tenantId) {
-        com.hydra.common.context.SecurityContextHolder.setTenantId(tenantId);
-    }
 }

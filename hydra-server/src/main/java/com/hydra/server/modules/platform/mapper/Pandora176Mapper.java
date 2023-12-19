@@ -1,8 +1,10 @@
 package com.hydra.server.modules.platform.mapper;
 
-import java.util.List;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hydra.server.modules.platform.entity.Pandora176;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 【请填写功能名称】Mapper接口
@@ -25,4 +27,11 @@ public interface Pandora176Mapper extends BaseMapper<Pandora176>{
      */
    List<Pandora176> selectPandora176List(Pandora176 pandora176);
 
+    /**
+     * 查询列表
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    List<Pandora176> selectPandoraList(@Param("startTime") String startTime, @Param("endTime") String endTime);
 }

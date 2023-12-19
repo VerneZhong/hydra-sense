@@ -47,15 +47,6 @@ public class SecurityContextHolder {
         THREAD_LOCAL.set(threadLocalMap);
     }
 
-
-    public static Long getTenantId() {
-        return Convert.toLong(get(SecurityConstants.DETAILS_TENANT_ID), 9999L);
-    }
-
-    public static void setTenantId(String tenantId){
-        set(SecurityConstants.DETAILS_TENANT_ID, tenantId);
-    }
-
     public static Long getDeptId()
     {
         return Convert.toLong(get(SecurityConstants.DETAILS_DEPT_ID));

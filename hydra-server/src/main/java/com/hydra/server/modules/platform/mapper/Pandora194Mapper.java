@@ -26,4 +26,11 @@ public interface Pandora194Mapper extends BaseMapper<Pandora194>{
      */
    List<Pandora194> selectPandora194List(Pandora194 pandora176);
 
+    /**
+     * 查询数据
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    List<Pandora194> selectPandoraList(String startTime, String endTime);
 }

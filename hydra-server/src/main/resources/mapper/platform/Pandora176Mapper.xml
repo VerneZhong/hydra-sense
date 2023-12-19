@@ -26,6 +26,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectHumidityPandora176Vo"/>
         where id = #{id}
     </select>
-        
 
+    <select id="selectPandoraList" resultMap="Pandora176Result">
+        <include refid="selectHumidityPandora176Vo"/>
+        <where>
+            time &lt; #{endTime,jdbcType=VARCHAR}
+            and time &gt; #{startTime,jdbcType=VARCHAR}
+        </where>
+    </select>
 </mapper>

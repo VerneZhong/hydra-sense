@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Data
 @TableName("Pandora_176")
 @ApiModel(value = "Pandora对象", description = "潘多拉表")
-public class Pandora176 extends BaseEntity<Pandora176> {
+public class Pandora176 {
 
     /** 主键ID */
     @ApiModelProperty("主键ID")

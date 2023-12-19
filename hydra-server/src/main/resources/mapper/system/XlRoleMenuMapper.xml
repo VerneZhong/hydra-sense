@@ -7,7 +7,6 @@
         <id column="role_menu_id" property="roleMenuId" />
         <result column="role_id" property="roleId" />
         <result column="menu_id" property="menuId" />
-        <result column="tenant_id" property="tenantId" />
         <result column="updated_time" property="updatedTime" />
         <result column="updated_by" property="updatedBy" />
         <result column="created_time" property="createdTime" />
