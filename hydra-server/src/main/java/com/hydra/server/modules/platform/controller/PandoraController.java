@@ -8,6 +8,7 @@ import com.hydra.server.modules.platform.service.IPandora194Service;
 import com.hydra.server.modules.platform.vo.PandoraQueryVo;
 import com.hydra.server.modules.platform.vo.PandoraVo;
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class PandoraController extends BaseController {
     private final IPandora176Service pandora176Service;
     private final IPandora194Service pandora194Service;
 
+    @PreAuthorize("@customSs.hasPermi('system:pandora:queryList')")
     @PostMapping("/queryList")
     public TableDataInfo queryList(@RequestBody PandoraQueryVo vo) {
         List<PandoraVo> list = List.of();
