@@ -85,12 +85,6 @@ CREATE TABLE `hydra_dept` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='部门表';
 
 -- ----------------------------
--- Records of hydra_dept
--- ----------------------------
-INSERT INTO `hydra_dept` VALUES ('2', '1', '1,1', '运营部', '1', null, null, null, '0', '0', '9999', null, null, '2023-03-05 14:33:40', null, '0', '1');
-INSERT INTO `hydra_dept` VALUES ('9', '1', '1,1', '研发部', '2', '小王', '13245678956', '2554@163.com', '0', '0', '9999', '2023-03-13 17:21:27', '1', '2023-03-13 17:21:10', null, '1', '0');
-
--- ----------------------------
 -- Table structure for hydra_dict
 -- ----------------------------
 DROP TABLE IF EXISTS `hydra_dict`;
@@ -143,18 +137,14 @@ CREATE TABLE `hydra_dict_data` (
 -- ----------------------------
 -- Records of hydra_dict_data
 -- ----------------------------
-INSERT INTO `hydra_dict_data` VALUES ('1', 'sys_common_status', '成功', '0', '0', 'N', 'success', '0', null, '2023-03-04 22:54:25', '1', '2023-03-04 22:48:45', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('2', 'sys_common_status', '失败', '1', '0', 'N', 'danger', '0', null, '2023-03-04 22:54:36', '1', '2023-03-04 22:49:52', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('3', 'sys_normal_disable', '正常', '0', '0', 'N', 'primary', '0', null, '2023-03-04 22:53:19', '1', '2023-03-04 22:50:40', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('4', 'sys_normal_disable', '停用', '1', '0', 'N', 'danger', '0', null, '2023-03-04 22:53:27', '1', '2023-03-04 22:50:53', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('5', 'sys_show_hide', '显示', '1', '0', 'N', 'primary', '0', null, null, null, '2023-03-05 09:37:02', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('6', 'sys_show_hide', '隐藏', '0', '1', 'N', 'warning', '0', null, null, null, '2023-03-05 09:37:16', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('7', 'sys_menu_status', '正常', '1', '0', 'N', 'primary', '0', null, null, null, '2023-03-05 10:58:49', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('8', 'sys_menu_status', '禁用', '0', '2', 'N', 'danger', '0', null, null, null, '2023-03-05 10:59:08', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('9', 'sys_tenant_type', '公司', '0', '0', 'N', 'primary', '0', null, null, null, '2023-03-06 14:12:49', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('10', 'sys_tenant_type', '部门', '1', '1', 'N', 'primary', '0', null, null, null, '2023-03-06 14:13:02', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('11', 'sys_tenant_type', '个人', '2', '2', 'N', 'primary', '0', null, null, null, '2023-03-06 14:13:21', '1', '0', '1');
-INSERT INTO `hydra_dict_data` VALUES ('12', 'sys_tenant_type', '其他', '3', '3', 'N', 'primary', '0', null, null, null, '2023-03-06 14:13:34', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('1', 'sys_common_status', 'success', '0', '0', 'N', 'success', '0', null, '2023-03-04 22:54:25', '1', '2023-03-04 22:48:45', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('2', 'sys_common_status', 'fail', '1', '0', 'N', 'danger', '0', null, '2023-03-04 22:54:36', '1', '2023-03-04 22:49:52', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('3', 'sys_normal_disable', 'normal', '0', '0', 'N', 'primary', '0', null, '2023-03-04 22:53:19', '1', '2023-03-04 22:50:40', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('4', 'sys_normal_disable', 'deactivate', '1', '0', 'N', 'danger', '0', null, '2023-03-04 22:53:27', '1', '2023-03-04 22:50:53', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('5', 'sys_show_hide', 'display', '1', '0', 'N', 'primary', '0', null, null, null, '2023-03-05 09:37:02', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('6', 'sys_show_hide', 'hide', '0', '1', 'N', 'warning', '0', null, null, null, '2023-03-05 09:37:16', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('8', 'sys_menu_status', 'disable', '0', '2', 'N', 'danger', '0', null, null, null, '2023-03-05 10:59:08', '1', '0', '1');
+INSERT INTO `hydra_dict_data` VALUES ('12', 'sys_tenant_type', 'other', '3', '3', 'N', 'primary', '0', null, null, null, '2023-03-06 14:13:34', '1', '0', '1');
 
 -- ----------------------------
 -- Table structure for hydra_login_log
@@ -213,53 +203,53 @@ CREATE TABLE `hydra_menu` (
 -- ----------------------------
 -- Records of hydra_menu
 -- ----------------------------
-INSERT INTO `hydra_menu` VALUES ('1', '系统管理', null, 'system', null, null, '1', '0', '0', '0', null, '/sys', null, null, '0', '1', '2023-03-05 12:38:02', null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('2', '系统工具', null, 'email', null, null, '2', '0', '0', '0', null, '/tool', null, null, '0', '1', null, null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('3', '代码生成', null, 'code', null, null, '1', '2', '1', '0', null, 'gen', 'tool/gen/index', null, '0', '1', null, null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('4', '字典管理', null, 'dict', 'system:dict:list', null, '4', '1', '1', '0', null, 'dict', 'sys/dict/index', null, '0', '1', '2023-03-05 13:00:11', null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('5', '菜单管理', null, 'date-range', 'system:menu:list', null, '1', '1', '1', '0', null, 'menu', 'sys/menu/index', null, '0', '1', null, null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('6', '角色管理', null, 'dashboard', 'system:role:list', null, '2', '1', '1', '0', null, 'role', 'sys/role/index', null, '0', '1', '2023-03-05 12:59:54', null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('7', '菜单查询', null, '#', 'system:menu:query', null, '1', '5', '2', '0', null, null, null, null, '0', '1', null, null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('8', '菜单新增', null, '#', 'system:menu:create', null, '2', '5', '2', '0', null, null, null, null, '0', '1', null, null, null, null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('9', '字典查询', null, '#', 'system:dict:query', null, '1', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:16:16', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('10', '字典新增', null, '#', 'system:dict:create', null, '2', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:16:59', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('11', '字典修改', null, '#', 'system:dict:edit', null, '3', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:17:21', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('12', '字典删除', null, '#', 'system:dict:remove', null, '4', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:17:53', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('13', '菜单修改', null, '#', 'system:menu:edit', null, '3', '5', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:20:27', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('14', '菜单删除', null, '#', 'system:menu:remove', null, '4', '5', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:21:09', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('15', '角色查询', null, '#', 'system:role:query', null, '1', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:26:41', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('16', '角色新增', null, '#', 'system:role:create', null, '2', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:30:45', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('17', '角色修改', null, '#', 'system:role:edit', null, '3', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:31:21', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('18', '角色删除', null, '#', 'system:role:remove', null, '4', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:31:48', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('19', '系统监控', null, 'monitor', null, null, '3', '0', '0', '0', null, '/monitor', null, null, '0', '1', null, null, '2023-03-05 12:30:45', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('20', '在线用户', null, 'online', 'monitor:online:list', null, '1', '19', '1', '0', null, 'online', 'monitor/online/index', null, '0', '1', null, null, '2023-03-05 12:32:17', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('21', '查询', null, '#', 'monitor:online:query', null, '1', '20', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:32:59', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('22', '强退', null, '#', 'monitor:online:batchLogout', null, '2', '20', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:33:27', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('23', '服务监控', null, 'server', 'monitor:server:list', null, '2', '19', '1', '0', null, 'server', 'monitor/server/index', null, '0', '1', null, null, '2023-03-05 12:34:40', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('24', '缓存监控', null, 'redis', 'monitor:cache:list', null, '3', '19', '1', '0', null, 'cache', 'monitor/cache/index', null, '0', '1', null, null, '2023-03-05 12:35:45', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('25', '缓存列表', null, 'redis-list', 'monitor:cache:list', null, '4', '19', '1', '0', null, 'cacheList', 'monitor/cache/list', null, '0', '1', null, null, '2023-03-05 12:36:31', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('26', '平台管理', null, 'auth', null, null, '0', '0', '0', '0', null, '/platform', null, null, '0', '1', null, null, '2023-03-05 12:39:11', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('27', '部门管理', null, 'tree-table', 'system:dept:list', null, '3', '1', '1', '0', null, 'dept', 'sys/dept/index', null, '0', '1', '2023-03-05 13:00:21', null, '2023-03-05 12:41:45', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('28', '日志管理', null, 'log', null, null, '5', '1', '0', '0', null, 'log', null, null, '0', '1', null, null, '2023-03-05 12:45:51', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('29', '登录日志', null, 'logininfor', 'system:loginlog:list', null, '1', '28', '1', '0', null, 'loginlog', 'sys/log/loginlog/index', null, '0', '1', null, null, '2023-03-05 12:47:21', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('30', '操作日志', null, 'form', 'system:operlog:list', null, '2', '28', '1', '0', null, 'operlog', 'sys/log/operlog/index', null, '0', '1', null, null, '2023-03-05 12:48:06', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('31', '登录查询', null, '#', 'system:loginlog:query', null, '1', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:49:48', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('32', '记录删除', null, '#', 'system:loginlog:remove', null, '2', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:50:14', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('33', '清空', null, '#', 'system:loginlog:clean', null, '3', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:50:40', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('34', '导出', null, '#', 'system:loginlog:export', null, '4', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:50:56', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('35', '操作查询', null, '#', 'system:operlog:query', null, '1', '30', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:51:32', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('36', '操作删除', null, '#', 'system:operlog:remove', null, '2', '30', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:51:55', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('37', '操作导出', null, '#', 'system:operlog:export', null, '3', '30', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:52:09', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('38', '部门查询', null, '#', 'system:dept:query', null, '1', '27', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:53:52', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('39', '部门新增', null, '#', 'system:dept:create', null, '2', '27', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:54:33', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('40', '部门修改', null, '#', 'system:dept:edit', null, '3', '28', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:54:49', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('41', '部门删除', null, '#', 'system:dept:remove', null, '4', '27', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:55:20', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('42', '用户管理', null, 'user', 'system:user:list', null, '0', '1', '1', '0', null, 'user', 'sys/user/index', null, '0', '1', null, null, '2023-03-05 12:57:51', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('43', '用户查询', null, '#', 'system:user:query', null, '1', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:01:52', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('44', '用户新增', null, '#', 'system:user:create', null, '2', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:18', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('45', '用户修改', null, '#', 'system:user:edit', null, '3', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:38', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('46', '用户删除', null, '#', 'system:user:delete', null, '4', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:56', null, '0', '1');
-INSERT INTO `hydra_menu` VALUES ('47','潘多拉管理',NULL,'#','system:pandora:queryList',NULL,1,26,1,0,NULL,'pandora','pandora/index',NULL,0,1,'2023-12-19 22:10:10',NULL,'2023-12-17 21:06:38',NULL,0,1);
+# INSERT INTO `hydra_menu` VALUES ('1', 'System Management', null, 'system', null, null, '1', '0', '0', '0', null, '/sys', null, null, '0', '1', '2023-03-05 12:38:02', null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('2', 'System Tool', null, 'email', null, null, '2', '0', '0', '0', null, '/tool', null, null, '0', '1', null, null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('3', 'code generation', null, 'code', null, null, '1', '2', '1', '0', null, 'gen', 'tool/gen/index', null, '0', '1', null, null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('4', 'Dictionary management', null, 'dict', 'system:dict:list', null, '4', '1', '1', '0', null, 'dict', 'sys/dict/index', null, '0', '1', '2023-03-05 13:00:11', null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('5', 'Menu management', null, 'date-range', 'system:menu:list', null, '1', '1', '1', '0', null, 'menu', 'sys/menu/index', null, '0', '1', null, null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('6', 'Role management', null, 'dashboard', 'system:role:list', null, '2', '1', '1', '0', null, 'role', 'sys/role/index', null, '0', '1', '2023-03-05 12:59:54', null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('7', 'Menu query', null, '#', 'system:menu:query', null, '1', '5', '2', '0', null, null, null, null, '0', '1', null, null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('8', 'Menu new', null, '#', 'system:menu:create', null, '2', '5', '2', '0', null, null, null, null, '0', '1', null, null, null, null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('9', 'Dictionary lookup', null, '#', 'system:dict:query', null, '1', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:16:16', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('10', 'Dictionary added', null, '#', 'system:dict:create', null, '2', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:16:59', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('11', '字典修改', null, '#', 'system:dict:edit', null, '3', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:17:21', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('12', '字典删除', null, '#', 'system:dict:remove', null, '4', '4', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:17:53', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('13', '菜单修改', null, '#', 'system:menu:edit', null, '3', '5', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:20:27', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('14', '菜单删除', null, '#', 'system:menu:remove', null, '4', '5', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:21:09', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('15', '角色查询', null, '#', 'system:role:query', null, '1', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:26:41', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('16', '角色新增', null, '#', 'system:role:create', null, '2', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:30:45', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('17', '角色修改', null, '#', 'system:role:edit', null, '3', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:31:21', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('18', '角色删除', null, '#', 'system:role:remove', null, '4', '6', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-04 21:31:48', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('19', '系统监控', null, 'monitor', null, null, '3', '0', '0', '0', null, '/monitor', null, null, '0', '1', null, null, '2023-03-05 12:30:45', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('20', '在线用户', null, 'online', 'monitor:online:list', null, '1', '19', '1', '0', null, 'online', 'monitor/online/index', null, '0', '1', null, null, '2023-03-05 12:32:17', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('21', '查询', null, '#', 'monitor:online:query', null, '1', '20', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:32:59', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('22', '强退', null, '#', 'monitor:online:batchLogout', null, '2', '20', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:33:27', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('23', 'Service monitoring', null, 'server', 'monitor:server:list', null, '2', '19', '1', '0', null, 'server', 'monitor/server/index', null, '0', '1', null, null, '2023-03-05 12:34:40', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('24', '缓存监控', null, 'redis', 'monitor:cache:list', null, '3', '19', '1', '0', null, 'cache', 'monitor/cache/index', null, '0', '1', null, null, '2023-03-05 12:35:45', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('25', '缓存列表', null, 'redis-list', 'monitor:cache:list', null, '4', '19', '1', '0', null, 'cacheList', 'monitor/cache/list', null, '0', '1', null, null, '2023-03-05 12:36:31', null, '0', '1');
+INSERT INTO `hydra_menu` VALUES ('26', 'Platform Management', null, 'auth', null, null, '0', '0', '0', '0', null, '/platform', null, null, '0', '1', null, null, '2023-03-05 12:39:11', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('27', '部门管理', null, 'tree-table', 'system:dept:list', null, '3', '1', '1', '0', null, 'dept', 'sys/dept/index', null, '0', '1', '2023-03-05 13:00:21', null, '2023-03-05 12:41:45', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('28', '日志管理', null, 'log', null, null, '5', '1', '0', '0', null, 'log', null, null, '0', '1', null, null, '2023-03-05 12:45:51', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('29', '登录日志', null, 'logininfor', 'system:loginlog:list', null, '1', '28', '1', '0', null, 'loginlog', 'sys/log/loginlog/index', null, '0', '1', null, null, '2023-03-05 12:47:21', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('30', '操作日志', null, 'form', 'system:operlog:list', null, '2', '28', '1', '0', null, 'operlog', 'sys/log/operlog/index', null, '0', '1', null, null, '2023-03-05 12:48:06', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('31', '登录查询', null, '#', 'system:loginlog:query', null, '1', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:49:48', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('32', '记录删除', null, '#', 'system:loginlog:remove', null, '2', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:50:14', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('33', '清空', null, '#', 'system:loginlog:clean', null, '3', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:50:40', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('34', '导出', null, '#', 'system:loginlog:export', null, '4', '29', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:50:56', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('35', '操作查询', null, '#', 'system:operlog:query', null, '1', '30', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:51:32', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('36', '操作删除', null, '#', 'system:operlog:remove', null, '2', '30', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:51:55', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('37', '操作导出', null, '#', 'system:operlog:export', null, '3', '30', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:52:09', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('38', '部门查询', null, '#', 'system:dept:query', null, '1', '27', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:53:52', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('39', '部门新增', null, '#', 'system:dept:create', null, '2', '27', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:54:33', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('40', '部门修改', null, '#', 'system:dept:edit', null, '3', '28', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:54:49', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('41', '部门删除', null, '#', 'system:dept:remove', null, '4', '27', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 12:55:20', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('42', 'User Management', null, 'user', 'system:user:list', null, '0', '1', '1', '0', null, 'user', 'sys/user/index', null, '0', '1', null, null, '2023-03-05 12:57:51', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('43', 'User query', null, '#', 'system:user:query', null, '1', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:01:52', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('44', 'User new', null, '#', 'system:user:create', null, '2', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:18', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('45', 'User update', null, '#', 'system:user:edit', null, '3', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:38', null, '0', '1');
+# INSERT INTO `hydra_menu` VALUES ('46', 'User delete', null, '#', 'system:user:delete', null, '4', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:56', null, '0', '1');
+INSERT INTO `hydra_menu` VALUES ('47','Pandora Management',NULL,'#','system:pandora:queryList',NULL,1,26,1,0,NULL,'pandora','pandora/index',NULL,0,1,'2023-12-19 22:10:10',NULL,'2023-12-17 21:06:38',NULL,0,1);
 
 
 DROP TABLE IF EXISTS `hydra_oper_log`;
@@ -292,22 +282,6 @@ CREATE TABLE `hydra_oper_log` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='操作日志表';
 
 -- ----------------------------
--- Records of hydra_oper_log
--- ----------------------------
-INSERT INTO `hydra_oper_log` VALUES ('1', '角色管理-保存数据权限', '2', 'controller.system.modules.com.hydra.server.XlRoleController.dataScope()', 'POST', '0', 'admin', '/ucenter/role/dataScope', '127.0.0.1', null, '{\"admin\":false,\"createdBy\":1,\"createdTime\":\"2023-03-13 10:57:04\",\"dataScope\":\"3\",\"deleted\":false,\"deptCheckStrictly\":true,\"deptIds\":[],\"description\":\"门店管理员，数据权限只能查看到本门店的所有数据\",\"menuCheckStrictly\":true,\"params\":{},\"roleId\":12,\"roleKey\":\"store\",\"roleName\":\"门店管理员\",\"status\":0,\"tenantId\":9999,\"updatedBy\":1,\"updatedTime\":\"2023-03-13T11:31:39.403+08:00\",\"version\":2}', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 11:31:40', null, null, '9999', null, null, '2023-03-13 11:31:40', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('4', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.selectAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/selectAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 16:14:07', null, null, '9999', null, null, '2023-03-13 16:14:07', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('5', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.cancelAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/cancelAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":2,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:11:44', null, null, '9999', null, null, '2023-03-13 17:11:44', '1', '1', '1');
-INSERT INTO `hydra_oper_log` VALUES ('6', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.selectAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/selectAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:12:04', null, null, '9999', null, null, '2023-03-13 17:12:04', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('7', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.cancelAuthUser()', 'PUT', '0', 'admin', '/ucenter/role/authUser/cancel', '127.0.0.1', null, '{\"roleId\":11,\"userId\":2}', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:12:07', null, null, '9999', null, null, '2023-03-13 17:12:07', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('8', '角色管理', '9', 'controller.system.modules.com.hydra.server.XlRoleController.selectAuthUserAll()', 'PUT', '0', 'admin', '/ucenter/role/authUser/selectAll', '127.0.0.1', null, '11 [2]', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:14:46', null, null, '9999', null, null, '2023-03-13 17:14:46', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('9', '登录日志', '4', 'controller.system.modules.com.hydra.server.XlLoginLogController.export()', 'POST', '0', 'admin', '/system/loginlog/export', '127.0.0.1', null, '{\"params\":{}}', null, '0', null, '2023-03-13 17:37:41', null, null, '9999', null, null, '2023-03-13 17:37:41', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('10', '登录日志', '3', 'controller.system.modules.com.hydra.server.XlLoginLogController.remove()', 'DELETE', '0', 'admin', '/system/loginlog/91', '127.0.0.1', null, '{loginIds=91}', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:52:15', null, null, '9999', null, null, '2023-03-13 17:52:15', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('11', '操作日志表', '3', 'controller.system.modules.com.hydra.server.XlOperLogController.remove()', 'DELETE', '0', 'admin', '/system/operlog/5', '127.0.0.1', null, '{operIds=5}', '{\"code\":200,\"data\":1,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-13 17:52:51', null, null, '9999', null, null, '2023-03-13 17:52:51', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('12', '操作日志', '4', 'controller.system.modules.com.hydra.server.XlOperLogController.export()', 'POST', '0', 'admin', '/system/operlog/export', '127.0.0.1', null, '{\"params\":{}}', null, '0', null, '2023-03-14 09:24:16', null, null, '9999', null, null, '2023-03-14 09:24:16', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('13', '操作日志', '4', 'controller.system.modules.com.hydra.server.XlOperLogController.export()', 'POST', '0', 'admin', '/system/operlog/export', '127.0.0.1', null, '{\"params\":{}}', null, '0', null, '2023-03-14 09:26:34', null, null, '9999', null, null, '2023-03-14 09:26:34', '1', '0', '1');
-INSERT INTO `hydra_oper_log` VALUES ('14', '在线用户', '8', 'controller.monitor.modules.com.hydra.server.UserOnlineController.forceLogout()', 'DELETE', '0', 'admin', '/monitor/online/79a65994-c2f3-45bf-8361-7a7e54804c7e', '127.0.0.1', null, '{tokenId=79a65994-c2f3-45bf-8361-7a7e54804c7e}', '{\"code\":200,\"message\":\"操作成功\",\"success\":true}', '0', null, '2023-03-14 11:03:12', null, null, '9999', null, null, '2023-03-14 11:03:12', '1', '0', '1');
-
--- ----------------------------
 -- Table structure for hydra_role
 -- ----------------------------
 DROP TABLE IF EXISTS `hydra_role`;
@@ -333,8 +307,7 @@ CREATE TABLE `hydra_role` (
 -- ----------------------------
 -- Records of hydra_role
 -- ----------------------------
-INSERT INTO `hydra_role` VALUES ('1', '超级管理员', '拥有系统最高权限', 'admin', '1', '1', '1', '0', '9999', '2023-03-04 18:01:35', '1', '2023-03-03 18:03:28', null, '0', '1');
-INSERT INTO `hydra_role` VALUES ('8', '普通管理员', '普通管理员', 'common', '1', '0', '0', '0', '9999', '2023-03-10 15:28:44', '1', '2023-03-10 11:38:47', '1', '1', '1');
+INSERT INTO `hydra_role` VALUES ('1', 'super admin', 'Have the highest authority on the system', 'admin', '1', '1', '1', '0', '9999', '2023-03-04 18:01:35', '1', '2023-03-03 18:03:28', null, '0', '1');
 
 -- ----------------------------
 -- Table structure for hydra_role_dept
@@ -680,7 +653,7 @@ CREATE TABLE `hydra_user` (
 -- ----------------------------
 -- Records of hydra_user
 -- ----------------------------
-INSERT INTO `hydra_user` VALUES ('1', '1', '0', null, null, '', 'admin', '$2a$10$AtQatJCSY3L0qP07AlKf5OATykQ/OUAgNQMsd/IFoBXIY.1tJJE26', '超级管理员', null, '', '0', '', '', null, null, '9999', null, null, null, null, '0', '1');
+INSERT INTO `hydra_user` VALUES ('1', '1', '0', null, null, '', 'admin', '$2a$10$AtQatJCSY3L0qP07AlKf5OATykQ/OUAgNQMsd/IFoBXIY.1tJJE26', 'super admin', null, '', '0', '', '', null, null, '9999', null, null, null, null, '0', '1');
 
 -- ----------------------------
 -- Table structure for hydra_user_role

@@ -20,3 +20,7 @@ CREATE TABLE `Pandora_194`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
+
+
+CREATE INDEX Pandora_176_time_IDX USING BTREE ON hydra.Pandora_176 (`time`);
+CREATE INDEX Pandora_194_time_IDX USING BTREE ON hydra.Pandora_194 (`time`);

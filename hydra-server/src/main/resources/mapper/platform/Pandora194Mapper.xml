@@ -27,8 +27,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectPandoraList" resultMap="Pandora194Result">
         <include refid="selectHumidityPandora194Vo"/>
         <where>
-            time &lt; #{endTime,jdbcType=VARCHAR}
-            and time &gt; #{startTime,jdbcType=VARCHAR}
+            time <![CDATA[ <= ]]> #{endTime,jdbcType=VARCHAR}
+            and time <![CDATA[ >= ]]> #{startTime,jdbcType=VARCHAR}
         </where>
     </select>
 </mapper>
