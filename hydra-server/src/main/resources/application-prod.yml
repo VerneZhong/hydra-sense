@@ -2,7 +2,12 @@
 # 服务名
 spring:
   application:
-    name: hydra-ucenter
+    name: hydra-sense
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+      max-request-size: 10MB
 
   # druid数据源配置
   datasource:
@@ -67,7 +72,7 @@ spring:
       host: localhost # Redis服务器地址
       database: 0 # Redis数据库索引（默认为0）
       port: 6379 # Redis服务器连接端口
-      password: yz_admin # Redis服务器连接密码（默认为空）
+      password:  # Redis服务器连接密码（默认为空）
       timeout: 3000ms # 连接超时时间（毫秒）
 
 # mybatis日志
@@ -100,3 +105,6 @@ xl:
     authcode:
       # 登录验证码是否开启，开发环境配置false方便测试
       enable: true
+
+file:
+  upload-dir: /usr/home/pandora/img/

@@ -1,4 +1,5 @@
 package com.hydra.common.constant;
+
 /**
  * @author hydra
  * @description 通用常量信息

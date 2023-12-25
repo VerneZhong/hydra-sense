@@ -1,7 +1,6 @@
 package com.hydra.generator.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.hydra.common.domain.BaseEntity;
 import com.hydra.common.utils.StringUtils;
 
 import com.hydra.generator.constant.GenConstants;
@@ -12,7 +11,6 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotBlank;
-import java.sql.Date;
 import java.util.List;
 
 /**
