@@ -6,8 +6,10 @@ import com.hydra.common.enums.BusinessType;
 import com.hydra.common.enums.PandoraType;
 import com.hydra.common.page.TableDataInfo;
 import com.hydra.common.result.R;
+import com.hydra.server.modules.platform.entity.PandoraFile;
 import com.hydra.server.modules.platform.service.IPandora176Service;
 import com.hydra.server.modules.platform.service.IPandora194Service;
+import com.hydra.server.modules.platform.service.PandoraFileService;
 import com.hydra.server.modules.platform.vo.PandoraQueryVo;
 import com.hydra.server.modules.platform.vo.PandoraVo;
 import io.swagger.annotations.ApiOperation;
@@ -35,12 +37,17 @@ public class PandoraController extends BaseController {
     private final IPandora176Service pandora176Service;
     private final IPandora194Service pandora194Service;
 
+    private final PandoraFileService pandoraFileService;
+
     @Value("${file.upload-dir}")
     private String filePath;
 
-    public PandoraController(IPandora176Service pandora176Service, IPandora194Service pandora194Service) {
+    public PandoraController(IPandora176Service pandora176Service,
+                             IPandora194Service pandora194Service,
+                             PandoraFileService pandoraFileService) {
         this.pandora176Service = pandora176Service;
         this.pandora194Service = pandora194Service;
+        this.pandoraFileService = pandoraFileService;
     }
 
     @PreAuthorize("@customSs.hasPermi('system:pandora:queryList')")
@@ -59,7 +66,9 @@ public class PandoraController extends BaseController {
     @ApiOperation(value = "图片上传")
     @Log(title = "图片上传", businessType = BusinessType.UPDATE)
     @PostMapping("/uploadImg")
-    public R uploadImg(@RequestParam("file") MultipartFile file) {
+    public R uploadImg(@RequestParam("file") MultipartFile file,
+                       @RequestParam("fileName") String fileName,
+                       @RequestParam("description") String description) {
         if (file.isEmpty()) {
             return R.error("File is empty, please select a file to upload.");
         }
@@ -80,8 +89,13 @@ public class PandoraController extends BaseController {
             Path resolve = Paths.get(filePath).resolve(savedFileName);
             Files.copy(file.getInputStream(), resolve);
 
-            // todo 将文件路径存储到数据库中
-//            String realPath = resolve.toAbsolutePath().toString();
+            // 将文件路径存储到数据库中
+            PandoraFile pandoraFile = new PandoraFile();
+            pandoraFile.setFileName(fileName);
+            pandoraFile.setFilePath(resolve.toAbsolutePath().toString());
+            pandoraFile.setDescription(description);
+
+            pandoraFileService.save(pandoraFile);
 
             // 返回成功响应
             return R.ok("File uploaded successfully: " + savedFileName);

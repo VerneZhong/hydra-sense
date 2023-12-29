@@ -2,7 +2,12 @@
 # 服务名
 spring:
   application:
-    name: hydra-tenant
+    name: hydra-sense
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+      max-request-size: 10MB
 
   # druid数据源配置
   datasource:
@@ -95,3 +100,6 @@ xl:
     authcode:
       # 登录验证码是否开启，开发环境配置false方便测试
       enable: false
+
+file:
+  upload-dir: /Users/verne.zhong/Downloads/
