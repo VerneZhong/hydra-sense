@@ -14,6 +14,7 @@ import java.util.Optional;
 
 /**
  * pandora file service implement
+ *
  * @author Mr.Zxb
  * @description
  * @date 2023/12/29 22:00
@@ -45,9 +46,12 @@ public class PandoraFileServiceImpl extends ServiceImpl<PandoraFileMapper, Pando
 
     private static void removeOldFile(String filePath) {
         try {
-            FileUtils.delete(new File(filePath));
+            File file = new File(filePath);
+            if (file.exists()) {
+                FileUtils.delete(file);
+            }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
