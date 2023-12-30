@@ -107,4 +107,4 @@ xl:
       enable: true
 
 file:
-  upload-dir: /usr/home/pandora/img/
+  upload-dir: /img//var/www/pandora/images/
