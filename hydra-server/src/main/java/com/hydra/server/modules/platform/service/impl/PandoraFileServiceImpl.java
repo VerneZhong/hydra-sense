@@ -31,7 +31,7 @@ public class PandoraFileServiceImpl extends ServiceImpl<PandoraFileMapper, Pando
 
         QueryWrapper<PandoraFile> wrapper = new QueryWrapper<>();
         wrapper.eq("file_name", fileName);
-        PandoraFile file = Optional.of(this.getOne(wrapper))
+        PandoraFile file = Optional.ofNullable(this.getOne(wrapper))
                 .map(one -> {
                     // 移除旧文件
                     removeOldFile(one.getFilePath());

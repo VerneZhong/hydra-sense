@@ -23,6 +23,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * Pandora Controller
@@ -107,7 +108,11 @@ public class PandoraController extends BaseController {
 
     @GetMapping("/getPandoraFile")
     public R getPandoraFile() {
-        List<PandoraFile> list = pandoraFileService.list();
+        List<PandoraFile> list = pandoraFileService.list().stream().map(f -> {
+            String replace = f.getFilePath().replace(filePath, "http://localhost:8080/images/");
+            f.setFilePath(replace);
+            return f;
+        }).collect(Collectors.toList());
         return R.ok(list);
     }
 
