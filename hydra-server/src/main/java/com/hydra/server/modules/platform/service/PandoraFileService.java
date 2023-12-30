@@ -8,4 +8,5 @@ import com.hydra.server.modules.platform.entity.PandoraFile;
  * @author verne.zhong
  */
 public interface PandoraFileService extends IService<PandoraFile> {
+    void insertOrUpdate(String fileName, String filePath, String description);
 }

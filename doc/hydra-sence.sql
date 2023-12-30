@@ -35,4 +35,5 @@ CREATE TABLE pandora_file
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
+ALTER TABLE pandora_file ADD CONSTRAINT pandora_file_UN UNIQUE KEY (file_name);
 

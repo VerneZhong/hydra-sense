@@ -4,7 +4,6 @@ import com.hydra.common.annotation.Log;
 import com.hydra.common.controller.BaseController;
 import com.hydra.common.enums.BusinessType;
 import com.hydra.common.enums.PandoraType;
-import com.hydra.common.page.TableDataInfo;
 import com.hydra.common.result.R;
 import com.hydra.server.modules.platform.entity.PandoraFile;
 import com.hydra.server.modules.platform.service.IPandora176Service;
@@ -52,7 +51,7 @@ public class PandoraController extends BaseController {
 
     @PreAuthorize("@customSs.hasPermi('system:pandora:queryList')")
     @PostMapping("/queryList")
-    public TableDataInfo queryList(@RequestBody PandoraQueryVo vo) {
+    public R queryList(@RequestBody PandoraQueryVo vo) {
         List<PandoraVo> list = List.of();
         if (vo.getPandoraType() == PandoraType.P176.getType()) {
             list = pandora176Service.queryList(vo);
@@ -60,7 +59,7 @@ public class PandoraController extends BaseController {
         if (vo.getPandoraType() == PandoraType.P194.getType()) {
             list = pandora194Service.queryList(vo);
         }
-        return getDataTable(list);
+        return R.ok(list);
     }
 
     @ApiOperation(value = "图片上传")
@@ -90,12 +89,7 @@ public class PandoraController extends BaseController {
             Files.copy(file.getInputStream(), resolve);
 
             // 将文件路径存储到数据库中
-            PandoraFile pandoraFile = new PandoraFile();
-            pandoraFile.setFileName(fileName);
-            pandoraFile.setFilePath(resolve.toAbsolutePath().toString());
-            pandoraFile.setDescription(description);
-
-            pandoraFileService.save(pandoraFile);
+            pandoraFileService.insertOrUpdate(fileName, resolve.toAbsolutePath().toString(), description);
 
             // 返回成功响应
             return R.ok("File uploaded successfully: " + savedFileName);
@@ -103,6 +97,12 @@ public class PandoraController extends BaseController {
             e.printStackTrace();
             return R.error("There is an abnormality in uploading pictures, please contact the administrator.");
         }
+    }
+
+    @GetMapping("/getPandoraFile")
+    public R getPandoraFile() {
+        List<PandoraFile> list = pandoraFileService.list();
+        return R.ok(list);
     }
 
 }

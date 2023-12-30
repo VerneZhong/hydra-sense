@@ -13,7 +13,7 @@ import lombok.Data;
  * @date 2023/12/29 21:42
  */
 @Data
-@TableName("Pandora_194")
+@TableName("pandora_file")
 @ApiModel(value = "PandoraFile对象", description = "潘多拉文件表")
 public class PandoraFile {
     @ApiModelProperty("主键ID")
