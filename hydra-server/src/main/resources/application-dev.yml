@@ -103,3 +103,4 @@ xl:
 
 file:
   upload-dir: /Users/verne.zhong/Downloads/pandora/images/
+  nginx-url: http://localhost:8080/images/

@@ -108,3 +108,4 @@ xl:
 
 file:
   upload-dir: /var/www/pandora/images/
+  nginx-url: http://localhost:8080/images/

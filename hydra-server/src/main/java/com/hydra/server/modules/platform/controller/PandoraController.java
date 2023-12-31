@@ -43,6 +43,9 @@ public class PandoraController extends BaseController {
     @Value("${file.upload-dir}")
     private String filePath;
 
+    @Value("${file.nginx-url}")
+    private String nginxUrl;
+
     public PandoraController(IPandora176Service pandora176Service,
                              IPandora194Service pandora194Service,
                              PandoraFileService pandoraFileService) {
@@ -108,10 +111,9 @@ public class PandoraController extends BaseController {
 
     @GetMapping("/getPandoraFile")
     public R getPandoraFile() {
-        List<PandoraFile> list = pandoraFileService.list().stream().map(f -> {
-            String replace = f.getFilePath().replace(filePath, "http://localhost:8080/images/");
+        List<PandoraFile> list = pandoraFileService.list().stream().peek(f -> {
+            String replace = f.getFilePath().replace(filePath, nginxUrl);
             f.setFilePath(replace);
-            return f;
         }).collect(Collectors.toList());
         return R.ok(list);
     }
