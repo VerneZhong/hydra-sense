@@ -19,7 +19,7 @@ spring:
     # 数据库对应的用户名
     username: root
     # 数据库对应的密码
-    password: root
+    password: '!Aljt3!Pjmeh'
     druid:
       # 配置监控统计拦截的filters，stat是sql监控，wall是防火墙(如果不添加则监控无效)，添加log4j需要引入jar包
       filters: stat,wall,config
@@ -108,4 +108,4 @@ xl:
 
 file:
   upload-dir: /var/www/pandora/images/
-  nginx-url: http://localhost:8080/images/
+  nginx-url: http://148.135.68.45/images/

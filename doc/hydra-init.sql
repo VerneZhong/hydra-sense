@@ -250,8 +250,8 @@ INSERT INTO `hydra_menu` VALUES ('26', 'Platform Management', null, 'auth', null
 # INSERT INTO `hydra_menu` VALUES ('45', 'User update', null, '#', 'system:user:edit', null, '3', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:38', null, '0', '1');
 # INSERT INTO `hydra_menu` VALUES ('46', 'User delete', null, '#', 'system:user:delete', null, '4', '42', '2', '0', null, null, null, null, '0', '1', null, null, '2023-03-05 13:02:56', null, '0', '1');
 INSERT INTO `hydra_menu` VALUES ('47','Pandora Management',NULL,'#','system:pandora:queryList',NULL,1,26,1,0,NULL,'pandora','pandora/manager/index',NULL,0,1,'2023-12-19 22:10:10',NULL,'2023-12-17 21:06:38',NULL,0,1);
-INSERT INTO `hydra_menu` VALUES ('48','Image Show',NULL,'#','system:pandora:show',NULL,1,26,1,0,NULL,'pandora','pandora/img/index',NULL,0,1,'2023-12-19 22:10:10',NULL,'2023-12-17 21:06:38',NULL,0,1);
-INSERT INTO `hydra_menu` VALUES ('49','Image Upload',NULL,'#','system:pandora:upload',NULL,1,26,1,0,NULL,'pandora','pandora/upload/index',NULL,0,1,'2023-12-19 22:10:10',NULL,'2023-12-17 21:06:38',NULL,0,1);
+INSERT INTO hydra_menu VALUES(48, 'Image Management', NULL, '#', 'system:pandora:upload', NULL, 1, 26, 1, 0, NULL, 'pandora/img', 'pandora/img/index', NULL, 0, 1, '2023-12-19 22:10:10', NULL, '2023-12-17 21:06:38', NULL, 0, 1);
+INSERT INTO hydra_menu VALUES(49, 'Image Upload', NULL, '#', 'system:pandora:upload', NULL, 1, 26, 1, 0, NULL, 'pandora/upload', 'pandora/upload/index', NULL, 0, 1, '2023-12-19 22:10:10', NULL, '2023-12-17 21:06:38', NULL, 0, 1);
 
 
 DROP TABLE IF EXISTS `hydra_oper_log`;
