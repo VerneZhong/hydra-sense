@@ -91,7 +91,7 @@ public class JwtToken {
      * @return 令牌
      */
     public String createToken(JwtUser jwtUser) {
-        String token = IdUtils.fastUUID();
+        String token = IdUtils.fastUuid();
         jwtUser.setToken(token);
         setUserAgent(jwtUser);
         refresToken(jwtUser);
@@ -234,7 +234,7 @@ public class JwtToken {
      * 创建令牌
      */
     public Map<String, Object> createToken(LoginUser loginUser) {
-        String token = IdUtils.fastUUID();
+        String token = IdUtils.fastUuid();
         Long userId = loginUser.getUser().getUserId();
         String userName = loginUser.getUser().getUserCode();
         Long tenantId = loginUser.getUser().getTenantId();
