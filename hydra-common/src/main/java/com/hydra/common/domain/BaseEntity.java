@@ -148,7 +148,7 @@ public class BaseEntity<T> implements Serializable {
 
     public Map<String, Object> getParams() {
         if (params == null) {
-            params = new HashMap<>();
+            params = new HashMap<>(16);
         }
         return params;
     }

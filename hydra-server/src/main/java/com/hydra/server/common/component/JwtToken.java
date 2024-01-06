@@ -79,7 +79,7 @@ public class JwtToken {
      * 根据用户信息生成token
      */
     public String generateToken(UserDetails userDetails) {
-        Map<String, Object> claims = new HashMap<>();
+        Map<String, Object> claims = new HashMap<>(16);
         claims.put(CLAIM_KEY_USERNAME, userDetails.getUsername());
         claims.put(CLAIM_KEY_CREATED, new Date());
         return generateToken(claims);
@@ -96,7 +96,7 @@ public class JwtToken {
         setUserAgent(jwtUser);
         refresToken(jwtUser);
 
-        Map<String, Object> claims = new HashMap<>();
+        Map<String, Object> claims = new HashMap<>(16);
         claims.put(Constants.LOGIN_USER_KEY, token);
         return createToken(claims);
     }
@@ -248,14 +248,14 @@ public class JwtToken {
         refreshToken(loginUser);
 
         // Jwt存储信息
-        Map<String, Object> claimsMap = new HashMap<String, Object>();
+        Map<String, Object> claimsMap = new HashMap<>(16);
         claimsMap.put(SecurityConstants.USER_KEY, token);
         claimsMap.put(SecurityConstants.DETAILS_USER_ID, userId);
         claimsMap.put(SecurityConstants.DETAILS_USERNAME, userName);
         //部门id
         claimsMap.put(SecurityConstants.DETAILS_DEPT_ID, deptId);
         // 接口返回信息
-        Map<String, Object> rspMap = new HashMap<String, Object>();
+        Map<String, Object> rspMap = new HashMap<>(16);
         rspMap.put("token", this.createToken(claimsMap));
         rspMap.put("expires_in", expire);
         rspMap.put("tokenHead", tokenHead);

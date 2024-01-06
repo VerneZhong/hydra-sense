@@ -157,10 +157,6 @@ public class LoginServiceImpl implements LoginService {
             sysUserVo.setUser(sysUser);
             sysUserVo.setRoles(roles);
             sysUserVo.setPermissions(permissions);
-//            if(tenant != null) {
-//                sysUserVo.setTenantEndDate(tenant.getTenantTime());
-//                sysUserVo.setTenantStatus(Integer.valueOf(tenant.getTenantStatus()));
-//            }
             return sysUserVo;
         }
         return null;
