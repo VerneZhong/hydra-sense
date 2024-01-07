@@ -3,14 +3,11 @@ package com.hydra.server.modules.platform.controller;
 import com.hydra.common.annotation.Log;
 import com.hydra.common.controller.BaseController;
 import com.hydra.common.enums.BusinessType;
-import com.hydra.common.enums.PandoraType;
 import com.hydra.common.result.R;
 import com.hydra.server.modules.platform.entity.PandoraFile;
-import com.hydra.server.modules.platform.service.IPandora176Service;
-import com.hydra.server.modules.platform.service.IPandora194Service;
+import com.hydra.server.modules.platform.service.IPandoraService;
 import com.hydra.server.modules.platform.service.PandoraFileService;
 import com.hydra.server.modules.platform.vo.PandoraQueryVo;
-import com.hydra.server.modules.platform.vo.PandoraVo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -35,9 +32,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/system/pandora")
 public class PandoraController extends BaseController {
 
-    private final IPandora176Service pandora176Service;
-    private final IPandora194Service pandora194Service;
-
+    private final IPandoraService pandoraService;
     private final PandoraFileService pandoraFileService;
 
     @Value("${file.upload-dir}")
@@ -46,25 +41,16 @@ public class PandoraController extends BaseController {
     @Value("${file.nginx-url}")
     private String nginxUrl;
 
-    public PandoraController(IPandora176Service pandora176Service,
-                             IPandora194Service pandora194Service,
+    public PandoraController(IPandoraService pandoraService,
                              PandoraFileService pandoraFileService) {
-        this.pandora176Service = pandora176Service;
-        this.pandora194Service = pandora194Service;
+        this.pandoraService = pandoraService;
         this.pandoraFileService = pandoraFileService;
     }
 
     @PreAuthorize("@customSs.hasPermi('system:pandora:queryList')")
     @PostMapping("/queryList")
     public R queryList(@RequestBody PandoraQueryVo vo) {
-        List<PandoraVo> list = List.of();
-        if (vo.getPandoraType() == PandoraType.P176.getType()) {
-            list = pandora176Service.queryList(vo);
-        }
-        if (vo.getPandoraType() == PandoraType.P194.getType()) {
-            list = pandora194Service.queryList(vo);
-        }
-        return R.ok(list);
+        return R.ok(pandoraService.queryList(vo));
     }
 
     @ApiOperation(value = "图片上传")
