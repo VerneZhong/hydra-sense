@@ -108,4 +108,4 @@ xl:
 
 file:
   upload-dir: /var/www/pandora/images/
-  nginx-url: http://148.135.68.45/images/
+  nginx-url: https://www.pandora-humidity.xyz/images/
