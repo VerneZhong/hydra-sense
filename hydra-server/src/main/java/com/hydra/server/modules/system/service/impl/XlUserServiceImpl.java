@@ -169,7 +169,7 @@ public class XlUserServiceImpl extends ServiceImpl<XlUserMapper, XlUser> impleme
     public boolean insertUserRole(XlUser user) {
         if (user.getRoleIds() != null && user.getRoleIds().length > 0) {
             // 新增用户与角色管理
-            List<XlUserRole> list = new ArrayList<XlUserRole>(user.getRoleIds().length);
+            List<XlUserRole> list = new ArrayList<>(user.getRoleIds().length);
             for (Long roleId : user.getRoleIds()) {
                 XlUserRole ur = new XlUserRole();
                 ur.setUserId(user.getUserId());

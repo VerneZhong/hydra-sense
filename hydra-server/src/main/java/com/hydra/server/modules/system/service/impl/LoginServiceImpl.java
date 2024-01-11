@@ -1,7 +1,6 @@
 package com.hydra.server.modules.system.service.impl;
 
 
-import cn.hutool.core.convert.Convert;
 import com.hydra.common.constant.Constants;
 
 import com.hydra.common.constant.UserConstants;
@@ -29,7 +28,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -106,42 +104,42 @@ public class LoginServiceImpl implements LoginService {
         // 用户名或密码为空 错误
         if (StringUtils.isAnyBlank(username, password)) {
             // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户名/密码必须填写"));
-            throw new ServiceException("用户/密码必须填写");
+            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "User/password must be filled in"));
+            throw new ServiceException("User/password must be filled in");
         }
         // 密码如果不在指定范围内 错误
         if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
             // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户密码不在指定范围"));
-            throw new ServiceException("用户密码不在指定范围");
+            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "User password is not in the specified range"));
+            throw new ServiceException("User password is not in the specified range");
         }
         // 用户名不在指定范围内 错误
         if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
             // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户名不在指定范围"));
-            throw new ServiceException("用户名不在指定范围");
+            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "Username is not in the specified range"));
+            throw new ServiceException("Username is not in the specified range");
         }
         LoginUser userInfo = this.getLoginUserInfo(username);
         if (userInfo == null) {
             // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户名不存在"));
-            throw new ServiceException("用户名不存在");
+            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "Username does not exist"));
+            throw new ServiceException("Username does not exist");
         }
         XlUser user = userInfo.getUser();
-        if (!SecurityUtils.matchesPassword(password, user.getPassWord())) {
+        if (SecurityUtils.matchesPassword(password, user.getPassWord())) {
             // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "密码错误"));
-            throw new ServiceException("密码错误");
-        };
+            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "wrong password"));
+            throw new ServiceException("wrong password");
+        }
         //线程塞入租户ID
         if (user.getStatus().intValue() == 1) {
             // 登录记录日志
-            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "用户已停用，请联系管理员"));
-            throw new ServiceException("对不起，您的账号：" + username + " 已停用，请联系管理员");
+            AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_FAIL, "User has been deactivated, please contact the administrator"));
+            throw new ServiceException("Sorry, your account：" + username + " Disabled, please contact the administrator");
         }
-        AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_SUCCESS, "登录成功"));
+        AsyncManager.me().execute(AsyncFactory.recordLoginLog(username, Constants.LOGIN_SUCCESS, "login successful"));
         return userInfo;
     }
 

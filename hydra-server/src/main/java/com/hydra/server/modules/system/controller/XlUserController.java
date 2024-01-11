@@ -1,15 +1,16 @@
 package com.hydra.server.modules.system.controller;
 
-
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-
 import com.hydra.common.annotation.Log;
+import com.hydra.common.constant.Constants;
 import com.hydra.common.constant.UserConstants;
 import com.hydra.common.enums.BusinessType;
 import com.hydra.common.result.R;
-
 import com.hydra.server.common.component.JwtToken;
 import com.hydra.server.common.domain.LoginUser;
+import com.hydra.server.common.exception.ServiceException;
+import com.hydra.server.manager.AsyncManager;
+import com.hydra.server.manager.factory.AsyncFactory;
 import com.hydra.server.modules.system.entity.XlRole;
 import com.hydra.server.modules.system.entity.XlUser;
 import com.hydra.server.modules.system.service.XlRoleService;
@@ -22,7 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +69,7 @@ public class XlUserController {
     @ApiOperation(value = "添加用户")
     @PostMapping(value = "add")
     public R add(@RequestBody XlUser user) {
-        if (UserConstants.NOT_UNIQUE.equals(userService.checkUserNameUnique(user.getUserCode()))){
+        if (UserConstants.NOT_UNIQUE.equals(userService.checkUserNameUnique(user.getUserCode()))) {
             return R.error("新增用户'" + user.getUserCode() + "'失败，登录账号已存在");
         }
         boolean success = userService.create(user);
@@ -80,9 +81,9 @@ public class XlUserController {
 
     @ApiOperation(value = "修改用户")
     @PostMapping(value = "/update/{id}")
-    public R update(@PathVariable("id") Long id,@RequestBody XlUser user) {
+    public R update(@PathVariable("id") Long id, @RequestBody XlUser user) {
         user.setUserId(id);
-        Boolean flag = userService.update(user);
+        boolean flag = userService.update(user);
         if (flag) {
             return R.ok();
         }
@@ -92,8 +93,7 @@ public class XlUserController {
     @ApiOperation(value = "删除用户")
     @PostMapping(value = "/delete/{id}")
     public R delete(@PathVariable("id") Long id) {
-        Boolean flag = userService.delete(Arrays.asList(id));
-        if (flag) {
+        if (userService.delete(Collections.singletonList(id))) {
             return R.ok();
         }
         return R.error();
@@ -106,15 +106,15 @@ public class XlUserController {
     }
 
     @ApiOperation(value = "根据用户id获取详细信息")
-    @GetMapping(value = { "/", "/{userId}" })
+    @GetMapping(value = {"/", "/{userId}"})
     public R getInfo(@PathVariable(value = "userId", required = false) Long userId) {
-        Map<String,Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(24);
         List<XlRole> roles = roleService.selectRoleList(new XlRole());
-        map.put("roles",XlUser.isAdmin(userId) ? roles : roles.stream().filter(r -> !r.isAdmin()).collect(Collectors.toList()));
+        map.put("roles", XlUser.isAdmin(userId) ? roles : roles.stream().filter(r -> !r.isAdmin()).collect(Collectors.toList()));
         if (userId != null) {
             XlUser user = userService.selectUserById(userId);
-            map.put("roleIds",user.getRoles().stream().map(XlRole::getRoleId).collect(Collectors.toList()));
-            map.put("user",user);
+            map.put("roleIds", user.getRoles().stream().map(XlRole::getRoleId).collect(Collectors.toList()));
+            map.put("user", user);
         }
         return R.ok(map);
     }
@@ -122,9 +122,9 @@ public class XlUserController {
     @ApiOperation(value = "获取个人信息")
     @GetMapping(value = "/profile")
     public R getProfile() {
-        Map<String,Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         XlUser loginUser = userService.selectUserById(SecurityUtils.getUserId());
-        map.put("user",loginUser);
+        map.put("user", loginUser);
         map.put("roleGroup", userService.selectUserRoleGroup(loginUser.getUserId()));
         return R.ok(map);
     }
@@ -144,7 +144,28 @@ public class XlUserController {
                 return R.ok(avatar);
             }
         }
-        return R.error("上传头像异常，请联系管理员");
+        return R.error("Abnormal upload of avatar, please contact the administrator");
+    }
+
+    @ApiOperation(value = "用户修改密码")
+    @Log(title = "用户修改密码", businessType = BusinessType.UPDATE)
+    @PutMapping("/profile/updatePwd")
+    public R updatePwd(@RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword) {
+        XlUser user = userService.getById(SecurityUtils.getUserId());
+        if (user != null) {
+            if (SecurityUtils.matchesPassword(oldPassword, user.getPassWord())) {
+                AsyncManager.me().execute(AsyncFactory.recordLoginLog(user.getUserCode(), Constants.LOGIN_FAIL, "wrong password"));
+                throw new ServiceException("wrong password");
+            }
+            String encryptPassword = SecurityUtils.encryptPassword(newPassword);
+            // 修改新密码
+            user.setPassWord(encryptPassword);
+            boolean flag = userService.update(user);
+            if (flag) {
+                return R.ok();
+            }
+        }
+        return R.error("If the password change is abnormal, please contact the administrator.");
     }
 }
 
