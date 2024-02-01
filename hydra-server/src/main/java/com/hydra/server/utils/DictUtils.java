@@ -7,8 +7,8 @@ import com.hydra.common.utils.SpringUtils;
 import com.hydra.common.utils.StringUtils;
 import com.hydra.server.modules.system.entity.XlDictData;
 
-import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author
@@ -51,7 +51,7 @@ public class DictUtils {
      * 清空字典缓存
      */
     public static void clearDictCache() {
-        Collection<String> keys = SpringUtils.getBean(RedisCache.class).keys(CacheConstants.SYS_DICT_KEY + "*");
+        Set<String> keys = SpringUtils.getBean(RedisCache.class).keys(CacheConstants.SYS_DICT_KEY + "*");
         SpringUtils.getBean(RedisCache.class).deleteObject(keys);
     }
 }

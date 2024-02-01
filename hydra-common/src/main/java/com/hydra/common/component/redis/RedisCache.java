@@ -6,6 +6,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -17,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisCache {
 
     @Autowired
-    public RedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;
 
     /**
      * 获得缓存的基本对象。
@@ -51,18 +52,20 @@ public class RedisCache {
 
     /**
      * 删除单个对象
+     *
      * @param key
      */
-    public boolean deleteObject(final String key) {
-        return redisTemplate.delete(key);
+    public void deleteObject(final String key) {
+        redisTemplate.delete(key);
     }
 
     /**
      * 获得缓存的基本对象列表
+     *
      * @param pattern 字符串前缀
      * @return 对象列表
      */
-    public Collection<String> keys(final String pattern) {
+    public Set<String> keys(final String pattern) {
         return redisTemplate.keys(pattern);
     }
 

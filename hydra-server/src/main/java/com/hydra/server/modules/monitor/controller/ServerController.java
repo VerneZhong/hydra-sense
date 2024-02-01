@@ -1,6 +1,5 @@
 package com.hydra.server.modules.monitor.controller;
 
-
 import com.hydra.common.result.R;
 import com.hydra.server.modules.monitor.entity.Server;
 import org.springframework.security.access.prepost.PreAuthorize;

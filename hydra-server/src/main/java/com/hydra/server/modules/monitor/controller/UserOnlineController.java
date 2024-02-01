@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author huoqiang
@@ -37,7 +38,7 @@ public class UserOnlineController  extends BaseController {
     @PreAuthorize("@customSs.hasPermi('monitor:online:list')")
     @GetMapping("/list")
     public TableDataInfo list(String ipaddr, String userName) {
-        Collection<String> keys = redisCache.keys(CacheConstants.LOGIN_TOKEN_KEY + "*");
+        Set<String> keys = redisCache.keys(CacheConstants.LOGIN_TOKEN_KEY + "*");
         List<UserOnline> userOnlineList = new ArrayList<>();
         for (String key : keys) {
             LoginUser user = redisCache.getCacheObject(key);

@@ -1,6 +1,5 @@
 package com.hydra.server.modules.monitor.controller;
 
-
 import com.hydra.common.constant.CacheConstants;
 import com.hydra.common.result.R;
 import com.hydra.common.utils.StringUtils;
@@ -62,8 +61,8 @@ public class CacheController {
     @PreAuthorize("@customSs.hasPermi('monitor:cache:list')")
     @GetMapping("/getKeys/{cacheName}")
     public R getCacheKeys(@PathVariable String cacheName) {
-        Set<String> cacheKyes = redisTemplate.keys(cacheName + "*");
-        return R.ok(cacheKyes);
+        Set<String> cacheKeys = redisTemplate.keys(cacheName + "*");
+        return R.ok(cacheKeys);
     }
 
     @PreAuthorize("@customSs.hasPermi('monitor:cache:list')")
@@ -77,7 +76,7 @@ public class CacheController {
     @PreAuthorize("@customSs.hasPermi('monitor:cache:list')")
     @DeleteMapping("/clearCacheName/{cacheName}")
     public R clearCacheName(@PathVariable String cacheName) {
-        Collection<String> cacheKeys = redisTemplate.keys(cacheName + "*");
+        Set<String> cacheKeys = redisTemplate.keys(cacheName + "*");
         redisTemplate.delete(cacheKeys);
         return R.ok();
     }
@@ -92,7 +91,7 @@ public class CacheController {
     @PreAuthorize("@customSs.hasPermi('monitor:cache:list')")
     @DeleteMapping("/clearCacheAll")
     public R clearCacheAll() {
-        Collection<String> cacheKeys = redisTemplate.keys("*");
+        Set<String> cacheKeys = redisTemplate.keys("*");
         redisTemplate.delete(cacheKeys);
         return R.ok();
     }
