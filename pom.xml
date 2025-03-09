@@ -40,7 +40,7 @@
         <!-- druid连接池 -->
         <druid-version>1.1.21</druid-version>
         <!-- io常用工具类 -->
-        <commom-io.version>2.11.0</commom-io.version>
+        <commom-io.version>2.14.0</commom-io.version>
         <!-- 阿里JSON解析器 -->
         <fastjson2-version>2.0.8</fastjson2-version>
         <!-- velocity 模板引擎 -->
